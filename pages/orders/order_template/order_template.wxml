@@ -1,0 +1,139 @@
+ <!--order_template.wxml-->
+<template name="pre_pay_order_info">
+    <view class="order_info">
+        <view class="bis_title_view">
+              <view class="bis_img_view">
+                  <image class="bis_img" src="http://cp.dxshuju.com/{{thumb}}"></image>
+              </view>
+              <view class="bis_name_view">
+                  <text class="bis_name">{{bis_name}}</text>
+              </view>
+          </view> 
+        <view class="thin_line"></view>
+        <view class="first_floor" data-orderid="{{order_no}}" data-model="{{pro_info}}" bindtap="detailOrder">
+            <view class="order_no_view">
+                <text class="order_no">订单号：{{order_no}}</text>
+            </view>
+            <view class="pay_status_view">
+                <text class="pay_status">{{status_text}}</text>
+            </view>
+        </view>
+        <view class="thin_line"></view>
+        <block wx:for="{{pro_info}}" wx:for-item="itemPro">
+            <view class="second_floor">
+                <view class="image_view">
+                    <image class="pro_image" src="http://cp.dxshuju.com/{{itemPro.thumb}}"></image>
+                </view>
+                <view class="pro_name_view">
+                    <text class="pro_name">{{itemPro.p_name}}</text>
+                    <text class="guige">规格：{{itemPro.con_content1}}</text>
+                </view>
+            </view>
+            <view class="thin_line"></view>
+        </block>
+        <view class="third_floor">
+            <view class="amount_view">
+                <text class="amount">{{order_type == 1 ? '积分：' : (order_type == 2 ? '' : '金额：')}}{{amount}}</text>
+            </view>
+            <view class="buttons">
+                <view class="cancel_order_button_view" data-orderid="{{order_id}}" bindtap="cancelOrder">
+                    <text class="cancel_order_button" data-orderid="{{order_id}}" catchtap="cancelOrder">取消订单</text>
+                </view>
+                 <view class="payment_button_view" data-orderid="{{order_id}}" bindtap="pay">
+                    <text class="payment_button" data-orderid="{{order_id}}" catchtap="pay">去付款</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="strong_line"></view>
+</template>
+
+<template name="confirm_receive_order_info">
+    <view class="order_info">
+        <view class="bis_title_view">
+              <view class="bis_img_view">
+                  <image class="bis_img" src="http://cp.dxshuju.com/{{thumb}}"></image>
+              </view>
+              <view class="bis_name_view">
+                  <text class="bis_name">{{bis_name}}</text>
+              </view>
+          </view> 
+        <view class="thin_line"></view>
+        <view class="first_floor" data-orderid="{{order_no}}" data-model="{{pro_info}}" bindtap="detailOrder">
+            <view class="order_no_view">
+                <text class="order_no">订单号：{{order_no}}</text>
+            </view>
+            <view class="pay_status_view">
+                <text class="pay_status">{{status_text}}</text>
+            </view>
+        </view>
+        <view class="thin_line"></view>
+        <block wx:for="{{pro_info}}" wx:for-item="itemPro">
+            <view class="second_floor">
+                <view class="image_view">
+                    <image class="pro_image" src="http://cp.dxshuju.com/{{itemPro.thumb}}"></image>
+                </view>
+                <view class="pro_name_view">
+                    <text class="pro_name">{{itemPro.p_name}}</text>
+                    <text class="guige">规格：{{itemPro.con_content1}}</text>
+                </view>
+            </view>
+            <view class="thin_line"></view>
+        </block>
+        <view class="third_floor">
+            <view class="amount_view">
+                <text class="amount">{{order_type == 1 ? '积分：' : (order_type == 2 ? '' : '金额：')}}{{amount}}</text>
+            </view>
+            <view class="buttons">
+                <view class="check_logistics_button_view" bindtap="getLogisticInfo" data-postcode="{{post_code}}" data-expressno="{{express_no}}" data-postmode="{{post_mode}}">
+                    <text class="check_logistics_button" catchtap="getLogisticInfo" data-postcode="{{post_code}}" data-expressno="{{express_no}}" data-postmode="{{post_mode}}">查看物流</text>
+                </view>
+                <view class="confirm_receive_button_view" data-orderid="{{order_id}}" bindtap="confirmOrder">
+                    <text class="confirm_receive_button" data-orderid="{{order_id}}" catchtap="confirmOrder">确认收货</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="strong_line"></view>
+</template>
+
+<template name="normal_order_info">
+    <view class="order_info">
+        <view class="bis_title_view">
+              <view class="bis_img_view">
+                  <image class="bis_img" src="http://cp.dxshuju.com/{{thumb}}"></image>
+              </view>
+              <view class="bis_name_view">
+                  <text class="bis_name">{{bis_name}}</text>
+              </view>
+          </view> 
+        <view class="thin_line"></view>
+        <view class="first_floor" data-orderid="{{order_no}}" data-model="{{pro_info}}" bindtap="detailOrder">
+            <view class="order_no_view">
+                <text class="order_no">订单号：{{order_no}}</text>
+            </view>
+            <view class="pay_status_view">
+                <text class="pay_status">{{status_text}}</text>
+            </view>
+        </view>
+        <view class="thin_line"></view>
+       <block wx:for="{{pro_info}}" wx:for-item="itemPro">
+            <view class="second_floor">
+                <view class="image_view">
+                    <image class="pro_image" src="http://cp.dxshuju.com/{{itemPro.thumb}}"></image>
+                </view>
+                <view class="pro_name_view">
+                    <text class="pro_name">{{itemPro.p_name}}</text>
+                    <text class="guige">规格：{{itemPro.con_content1}}</text>
+                </view>
+            </view>
+            <view class="thin_line"></view>
+        </block>
+        <view class="third_floor">
+            <view class="amount_view">
+                <text class="amount">{{order_type == 1 ? '积分：' : (order_type == 2 ? '' : '金额：')}}{{amount}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="strong_line"></view>
+</template>

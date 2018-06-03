@@ -1,0 +1,25 @@
+<view class="recorder_container">
+  <view class="tongji">
+    <text class="tongji1">我的积分</text>
+    <text class="tongji2">{{jifen}}</text>
+  </view>
+
+  <block wx:for="{{recommend_info}}">
+    <view class="order_con">
+      <view class="order_con1">
+        <text class="order_no">时间：{{item.create_time}}</text>
+      </view>
+      <view class="order_con2">
+        <text class="order_total">说明：{{item.remark}}</text>
+      </view>
+      <view class="order_con2">
+        <view class="images">
+          <image class="order_icon" src="/pics/icons/recordercon2.png"></image>
+        </view>
+        <text class="order_buy">本次积分变动：</text>
+        <text class="order_income" style="{{item.type == 1 ? 'color:#ff0000;' : 'color:#27ae60;' }}">{{item.type == 1 ? '+' : '-' }} {{ item.changed_jifen}}</text>
+      </view>
+    </view>
+  </block>
+
+</view>

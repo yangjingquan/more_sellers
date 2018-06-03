@@ -1,0 +1,28 @@
+<view class="team_container">
+  <view class="tongji">
+    <text class="tongji1">我的团队</text>
+    <text class="tongji2">拥有成员 {{total_count}} 名</text>
+  </view>
+  <view class="bis_view">
+    <view class="bis_title_view">
+      <view class="bis_title_view1">
+        <text class="bis_title">-  成员列表(点击可查业绩)   -</text>
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{team_list}}">
+    <view class="contant" data-memid="{{item.mem_id}}" bindtap="getRecOrders">
+      <view class="img_view">
+        <image class="img" src="{{item.avatarUrl}}"></image>
+      </view>
+      <view class="name_view">
+        <text class="name">{{item.nickname}}</text>
+        <text class="name_id">ID：{{item.mem_id}}</text>
+      </view>
+      <view class="jiantou_view">
+        <text class="jiantou">></text>
+      </view>
+    </view>
+    <view class="line"></view>
+  </block>
+</view>

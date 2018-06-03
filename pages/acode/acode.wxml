@@ -1,0 +1,8 @@
+<view class="acode_container">
+<view class="acode_txt">
+<text>让好友扫描你的二维码，将终身绑定推荐关系！</text>
+</view>
+     <view class="acode_view">
+        <image class="acode" src="{{acodeUrl + acode_url}}" mode="widthFix"></image>
+    </view> 
+</view>

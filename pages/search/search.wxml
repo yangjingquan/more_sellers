@@ -1,0 +1,49 @@
+<!--search.wxml--> 
+<view class="search_container">  
+    <view class="search_box_view">
+        <input class="search_input" type="text" placeholder-class="placeholder_class" confirm-type="search" placeholder="搜索" bindconfirm="search" bindinput="inputTab" value="{{value}}"></input>
+    </view>
+    <view class="hot_search_view" wx:if="{{showHotSearch}}">
+        <view class="hot_title_view">
+            <text class="hot_title">热门搜索</text>
+        </view>
+        <view class="hot_search_content_view">
+            <block wx:for="{{hot_words}}">
+                <view class="one_content" bindtap="hotSearchTab" data-param="{{item.word}}">
+                    <text class="hot_content">{{item.word}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <view class="pro_view" wx:if="{{showPro}}">
+        <view class="hot_title_view">
+            <text class="hot_title">搜索结果:</text>
+        </view> 
+        <block wx:for="{{pro_info}}">
+            <view class="pro_content" bindtap="getProDetail" data-proid="{{item.pro_id}}"> 
+                <view class="pro_img_view">
+                    <image class="pro_img" src="{{imgUrl + item.thumb}}" ></image>
+                </view>
+                <view class="content">
+                    <text class="pro_name">{{item.p_name}}</text>
+                    <view class="priceAndButton">
+                        <view class="about_price">
+                            <view class="org_price_view">
+                                <text class="org_price_title">原价</text><text class="org_price">￥{{item.original_price}}</text>
+                            </view>
+                            <view class="cur_price_view">
+                                <text class="group_count_text">会员价 ￥</text><text class="cur_price">{{item.associator_price}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="thin_line"></view>
+        </block>
+    </view>
+
+    <view class="empty_pro_view" wx:if="{{showEmpty}}">
+        <text class="empty_text">抱歉，{{value}} 暂无搜索结果</text>
+    </view>
+</view>

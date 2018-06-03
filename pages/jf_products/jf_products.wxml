@@ -1,0 +1,25 @@
+<view class="index">
+    <view class="recommend">
+        <block wx:for="{{jf_products}}">
+            <view class="recommend_content" bindtap="getProDetail" data-proid="{{item.pro_id}}"> 
+                <view class="pro_img_view">
+                    <image class="pro_img" src="{{imgUrl + item.thumb}}" ></image>
+                </view>
+                <view class="content">
+                    <text class="pro_name">{{item.p_name}}</text>
+                    <view class="priceAndButton">
+                        <view class="about_price">
+                            <view class="org_price_view">
+                                <text class="org_price_title">原价：</text><text class="org_price">￥{{item.original_price}}</text>
+                            </view>
+                            <view class="cur_price_view">
+                                <text class="group_count_text">积分换购：</text><text class="cur_price">{{item.ex_jifen}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="thin_line"></view>
+        </block>
+    </view>
+</view>

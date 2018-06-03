@@ -1,0 +1,39 @@
+<view class="after_pay_container">
+    <view class="order_view">
+        <view class="order_title_view">
+            <text class="order_titel">订单号：</text>
+        </view>
+        <view class="order_no_view">
+            <text class="order_no">{{order_no}}</text>
+        </view>
+    </view> 
+    <view class="strong_line"></view>
+    <view class="total_amount_view">
+        <view class="amount_title_view">
+            <text class="amount_title">总金额：</text>
+        </view>
+        <view class="amount_view">
+            <text class="amount">￥{{total_amount}}</text>
+        </view>
+    </view> 
+    <view class="strong_line"></view>
+    <view class="pay_status_view">
+         <view class="iconAndText" wx:if="{{pay_status == 'success'}}">
+            <icon class="icon" type="success" size="26" color="orange"></icon>
+            <text class="pay_status">支付成功</text>
+        </view> 
+        <view class="iconAndText" wx:if="{{pay_status == 'fail'}}">
+            <icon class="icon" type="cancel" size="26" color="orange"></icon>
+            <text class="pay_status">支付失败</text>
+        </view>
+    </view>
+    <view class="thin_line"></view>
+    <view class="buttons">
+         <view class="review_orders_view" wx:if="{{pay_status == 'success'}}" bindtap="preview_orders">
+            <text class="review_orders" >查看订单</text>
+        </view> 
+        <view class="repay_view" wx:if="{{pay_status == 'fail'}}" bindtap="repay">
+            <text class="repay" >重新支付</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,51 @@
+/* myorder.wxss */
+@import "order_template/order_template.wxss";
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.barTital{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60rpx;
+}
+
+.allOrder_view,.prePay_view,.preSend_view,.preTake_view,.completed_view,.preGroup_view{
+    width: 16.66%;
+    height: 60rpx;
+    text-align: center;
+}
+
+.allOrder,.prePay,.preSend,.preTake,.completed,.preGroup{
+    font-size: 28rpx;
+    line-height: 60rpx;
+    color: #787878;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top:3%;
+}
+
+.order_content{
+    width: 100%;
+    height: 100%;
+}
+
+.active{
+    margin-top:2%;
+    background-color:#fe4a65;
+    height:4rpx;
+    width:73%;
+    margin-left:12%;
+}
+
+.selected{
+  color:#fe4a65;
+}
+

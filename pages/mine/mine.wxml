@@ -1,0 +1,162 @@
+<!--index.wxml-->
+<view class="mine_container">
+  <view class="userinfo">
+    <view class="avatar_view">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="username_view">
+      <view class="in_username_view">
+        <text class="username">{{userInfo.nickName}}</text>
+        <text class="rec_id">我的推荐人ID：{{rec_id}}</text>
+        <text class="jifen">我的积分：{{jifen}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="order" bindtap="myOrderTap">
+    <view class="order_img_view">
+      <image class="order_icon" src="/pics/icons/order.png"></image>
+    </view>
+    <view class="my_order_view">
+      <text class="my_order">我的订单</text>
+    </view>
+    <view class="jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+
+  <view class="order" bindtap="myGroupOrderTap">
+    <view class="order_img_view">
+      <image class="order_icon" src="/pics/icons/order_group.png"></image>
+    </view>
+    <view class="my_order_view">
+      <text class="my_order">拼团订单</text>
+    </view>
+    <view class="jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+
+  <view class="address" bindtap="myAddressTap">
+    <view class="address_img_view">
+      <image class="address_icon" src="/pics/icons/address.png"></image>
+    </view>
+    <view class="address_view">
+      <text class="my_address">地址管理</text>
+    </view>
+    <view class="jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+
+  <view class="acode" bindtap="myAcode">
+    <view class="acode_img_view">
+      <image class="acode_icon" src="/pics/icons/acode.png"></image>
+    </view>
+    <view class="acode_view">
+      <text class="my_acode">我的二维码</text>
+    </view>
+    <view class="acode_jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+
+  <view class="income" bindtap="getMyIncome">
+    <view class="income_img_view">
+      <image class="income_icon" src="/pics/icons/income.png"></image>
+    </view>
+    <view class="income_view">
+      <text class="my_income">我的收入</text>
+    </view>
+    <view class="jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+
+  <view class="income" bindtap="getMyJifen">
+    <view class="income_img_view">
+      <image class="income_icon" src="/pics/icons/jifen.png"></image>
+    </view>
+    <view class="income_view">
+      <text class="my_income">我的积分</text>
+    </view>
+    <view class="jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+
+  <view class="rec_order" bindtap="getRecOrders">
+    <view class="rec_order_img_view">
+      <image class="rec_order_icon" src="/pics/icons/rec_order.png"></image>
+    </view>
+    <view class="rec_order_view">
+      <text class="my_rec_order">推荐订单</text>
+    </view>
+    <view class="jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+
+  <view class="my_team" bindtap="getMyTeamInfo">
+    <view class="my_team_img_view">
+      <image class="my_team_icon" src="/pics/icons/team.png"></image>
+    </view>
+    <view class="my_team_view">
+      <text class="my_team_text">我的团队</text>
+    </view>
+    <view class="jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+
+  <view class="my_team" bindtap="getMyRecInfo">
+    <view class="my_team_img_view">
+      <image class="my_team_icon" src="/pics/icons/recommend.png"></image>
+    </view>
+    <view class="my_team_view">
+      <text class="my_team_text">我的推荐</text>
+    </view>
+    <view class="jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+  
+  <view class="coupon">
+    <view class="coupon_img_view">
+      <image class="coupon_icon" src="/pics/icons/coupon.png"></image>
+    </view>
+    <view class="coupon_view">
+      <text class="my_coupon">优惠卡券</text>
+    </view>
+    <view class="coupon_notice_view">
+      <text class="coupon_notice">(即将上线 敬请期待)</text>
+    </view>
+    <view class="coupon_jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+
+  <view class="custom_service" bindtap="getService">
+    <view class="custom_service_img_view">
+      <image class="earphone_icon" src="/pics/icons/earphone.png"></image>
+    </view>
+    <view class="custom_service_view">
+      <text class="connect">联系客服</text>
+    </view>
+    <view class="jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+
+  <view class="custom_service" bindtap="clearStorage">
+    <view class="custom_service_img_view">
+      <image class="earphone_icon" src="/pics/icons/clear.png"></image>
+    </view>
+    <view class="custom_service_view">
+      <text class="connect">清除缓存</text>
+    </view>
+    <view class="jiantou_view">
+      <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+    </view>
+  </view>
+
+</view>

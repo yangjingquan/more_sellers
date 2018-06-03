@@ -1,0 +1,103 @@
+.team_container{
+    width: 100%;
+    height: 100%;
+}
+
+.tongji {
+  display: flex;
+  flex-direction: column;
+  background-color: #ff7675;
+  height: 200rpx;
+}
+
+.tongji1 {
+  color: #f1f1f1;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+  margin-left: 40rpx;
+}
+
+.tongji2 {
+  color: #fff;
+  font-size: 50rpx;
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+}
+
+.bis_view {
+  width: 100%;
+  border-top: 20rpx solid #f1f1f1;
+}
+
+.bis_title_view {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  height: 150rpx;
+}
+
+.bis_title_view1 {
+  width: 100%;
+  height: 150rpx;
+}
+
+.bis_title {
+  font-size: 30rpx;
+  color: #fe4a65;
+  line-height: 150rpx;
+  margin-left: 2%;
+}
+
+.contant{
+    width: 100%;
+    height: 100rpx; 
+    display: flex;
+    flex-direction: row;
+}
+
+.img_view{
+    width: 20%;
+    text-align:center;
+}
+
+.img{
+   width: 100rpx;
+   height: 100rpx; 
+   border-radius: 50%;
+   margin: 0 auto;
+}
+
+.name_view{
+    width: 60%; 
+    height: 100rpx; 
+    display: flex;
+    flex-direction: column;
+}
+
+.name,.name_id{
+    font-size: 32rpx;
+    color: #353535;
+    line-height: 50rpx;
+}
+
+.jiantou_view{
+    width: 10%; 
+    height: 100rpx;
+    text-align: center;
+    margin-left:8%;
+}
+
+.jiantou{
+    font-size: 32rpx;
+    color: #888888;
+    line-height: 100rpx;
+}
+
+.line{
+    background-color: #f6f6f6;
+    height: 4rpx;
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

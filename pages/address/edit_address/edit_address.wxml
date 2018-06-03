@@ -1,0 +1,38 @@
+<view class="address_container">
+    <form bindsubmit="formSubmit">
+        <view class="receiver_view">
+            <label class="receiver_label">收货人：</label>
+            <input name="receiver" class="receiver_input" value="{{address_info.rec_name}}" type="text"></input>
+        </view>
+        <view class="line"></view>
+        <view class="idno_view">
+            <label class="idno_label">身份证号：</label>
+            <input name="idno" class="idno_input" value="{{address_info.idno}}"></input>
+        </view>
+        <view class="line"></view>
+        <view class="contact_view">
+            <label class="contact_label">联系电话：</label>
+            <input name="contact" class="contact_input" value="{{address_info.mobile}}"></input>
+        </view>
+        <view class="line"></view>
+        <view class="area_view">
+            <label class="area_label">所在地区：</label>
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}" name="address">
+                <view class="picker">
+                  {{region[0]}} {{region[1]}} {{region[2]}}
+                </view>
+            </picker>
+        </view>
+        <view class="line"></view>
+        <view class="detail_address_view">
+            <label class="detail_address_label">详细地址：</label>
+            <input name="detail_address" class="detail_address_input" value="{{address_info.address}}"></input>
+        </view>
+        <view class="line"></view>
+        <view class="buttons">
+            <view class="edit_address_view">
+                <button class="edit_address"  formType="submit">确认修改</button>
+            </view>
+        </view>
+    </form>
+</view>

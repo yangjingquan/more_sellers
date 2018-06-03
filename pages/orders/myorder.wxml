@@ -1,0 +1,41 @@
+<!--myorder.wxml-->
+<import src="order_template/order_template.wxml"/>
+<view class="container">
+    <view class="barTital">
+        <view class="allOrder_view" bindtap="checkOrderStatus" data-statusid="1">
+            <text class="allOrder {{status == 1 ? 'selected' : ''}}">全部</text>
+            <view class="{{status == 1 ? 'active' : ''}}"></view>
+        </view>
+        <view class="prePay_view" bindtap="checkOrderStatus" data-statusid="3">
+            <text class="prePay {{status == 3 ? 'selected' : ''}}">待付款</text>
+             <view class="{{status == 3 ? 'active' : ''}}"></view> 
+        </view>
+        <view class="preSend_view" bindtap="checkOrderStatus" data-statusid="4">
+            <text class="preSend {{status == 4 ? 'selected' : ''}}">待发货</text>
+             <view class="{{status == 4 ? 'active' : ''}}"></view> 
+        </view>
+        <view class="preTake_view" bindtap="checkOrderStatus" data-statusid="5">
+            <text class="preTake {{status == 5 ? 'selected' : ''}}">待收货</text>
+             <view class="{{status == 5 ? 'active' : ''}}"></view> 
+        </view>
+        <view class="completed_view" bindtap="checkOrderStatus" data-statusid="6">
+            <text class="completed {{status == 6 ? 'selected' : ''}}">已完成</text>
+             <view class="{{status == 6 ? 'active' : ''}}"></view> 
+        </view>
+        
+    </view>
+    <!-- <view class="strong_line"></view> -->
+    <view class="content">
+        <block wx:for="{{order_info}}">
+            <view class="order_content" wx:if="{{item.status == 2}}">
+                <template is="pre_pay_order_info" data="{{...item}}"/>
+            </view>
+            <view class="order_content" wx:elif="{{item.status == 4}}">
+                <template is="confirm_receive_order_info" data="{{...item}}"/>
+            </view>
+            <view class="order_content" wx:else>
+                <template is="normal_order_info" data="{{...item}}"/>
+            </view>
+        </block>
+    </view>
+</view>

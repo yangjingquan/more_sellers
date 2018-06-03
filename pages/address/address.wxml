@@ -1,0 +1,36 @@
+<view class="address_container">
+     <block wx:for="{{address_info}}">
+        <view wx:if="{{show_address}}" class="address_content" bindtap="select_address" data-selectedid="{{item.a_id}}" >
+            <view class="address_info">
+                <view class="nameAndMobile">
+                    <view class="name_view">
+                        <text class="name">{{item.rec_name}}</text>
+                    </view>
+                    <view class="mobile_view">
+                        <text class="mobile">{{item.mobile}}</text>
+                    </view>
+                </view>
+                <view class="address_view">
+                    <text class="address">{{item.address}}</text>
+                </view>
+            </view>
+            <view class="editAndDelete">
+                <view class="edit_view">
+                    <image src="/pics/icons/edit.png" class="edit_pic" catchtap="editAddress" data-aid="{{item.a_id}}"></image>
+                </view>
+                <view class="delete_view">
+                    <image src="/pics/icons/delete.png" class="delete_pic" catchtap="deleteAddress" data-aid="{{item.a_id}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="line"></view>
+    </block> 
+    <view class="no_address_view" wx:if="{{!show_address}}">
+        <text class="no_address_text">您还没有收货地址哦!</text>
+    </view>
+    <view class="buttons">
+        <view class="new_address_view" bindtap="addNewAddress">
+            <text class="new_address" catchtap="addNewAddress">+ 新建地址</text>
+        </view>
+    </view>
+</view>

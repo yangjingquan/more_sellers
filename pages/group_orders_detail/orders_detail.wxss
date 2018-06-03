@@ -1,0 +1,157 @@
+page {
+  background-color: #f1f1f1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.status {
+  display: flex;
+  flex-direction: row;
+  background-color: #58acd7;
+  height: 200rpx;
+  line-height: 200rpx;
+  width: 100%;
+}
+
+.status_text {
+  width: 70%;
+  margin-left: 50rpx;
+  color: #fff;
+  font-size: 38rpx;
+}
+
+.status_img {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 60rpx;
+}
+
+.order {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  height: 180rpx;
+  line-height: 180rpx;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.order_img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 65rpx;
+  margin-left: 30rpx;
+}
+
+.order_text_view {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 30rpx;
+  height: 160rpx;
+  margin-top: 10rpx;
+}
+
+.order_text {
+  color: #999;
+  font-size: 26rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.goods {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  height: 260rpx;
+  line-height: 260rpx;
+  width: 100%;
+  border-bottom: 1px #f1f1f1 solid;
+}
+
+.goods_img {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 40rpx;
+  margin-left: 20rpx;
+}
+
+.goods_text_view {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 30rpx;
+  height: 240rpx;
+  margin-top: 10rpx;
+}
+
+.goods_text1 {
+  color: #000;
+  font-size: 28rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.goods_text2 {
+  color: #999;
+  font-size: 28rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-top: 70rpx;
+}
+
+.goods_text3 {
+  color: #000;
+  font-size: 26rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  height: 160rpx;
+  width: 100%;
+}
+
+.price_text1 {
+  width: 96%;
+  text-align:right;
+  font-size: 26rpx;
+  color:#999;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.price_text2 {
+  width: 96%;
+  text-align:right;
+  font-size: 30rpx;
+  color:#ff0000;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  /* height: 300rpx; */
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.detail_text {
+  width: 80%;
+  margin-left: 30rpx;
+  font-size: 25rpx;
+  color:#999;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+

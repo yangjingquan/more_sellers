@@ -1,0 +1,43 @@
+<!--share.wxml-->
+<view class="share_container">
+    <view class="pro_info_view">
+        <view class="image_view">
+            <image class="pro_image" src="{{imgUrl + order_res.thumb}}"></image>
+        </view>
+        <view class="nameAndPrice_view">
+            <view class="pro_name_view">
+                <text class="pro_name">{{order_res.p_name}}</text>
+            </view>
+            <view class="price_view">
+                <text class="org_price">￥{{order_res.associator_price}}</text>
+                <text class="group_price">￥{{order_res.pintuan_price}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="line"></view>
+     <view class="group_members_view">
+        <view class="group_member_view">
+            <block wx:for="{{mem_res}}">
+              <view class="one_member_view">
+                  <image class="avatar" src="{{item.avatarUrl}}"></image>
+              </view>
+            </block>
+        </view>
+        <view wx:if="{{!is_enough}}" class="qianggou_button_view" bindtap="qianggou">
+            <view class="qianggou_button" catchtap="qianggou">
+                <text class="qianggou" catchtap="qianggou">点击抢购</text>
+            </view>
+        </view>
+        <view wx:if="{{is_enough}}" class="qianggou_button_view">
+            <view class="qianggou_button">
+                <text class="qianggou">已成团</text>
+            </view>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view wx:if="{{!is_enough}}" class="buttons">
+        <view class="share_view" bindtap="share">
+            <button class="share" catchtap="share" open-type="share">邀请好友参团</button>
+        </view>
+    </view>
+</view>

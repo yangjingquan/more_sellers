@@ -1,0 +1,93 @@
+.index{
+  width: 100%;
+  height: 100%;
+}
+
+.recommend{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.recommend_content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 280rpx;
+}
+
+.pro_img_view{
+    width:220rpx;
+    height:220rpx; 
+    margin-left:5%;
+}
+
+.pro_img{
+    width: 100%; 
+    height:100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 62%;
+    margin-left: 2%;
+}
+
+.pro_name{
+    font-size: 30rpx;
+    color: #000000;
+}
+
+.pro_nature{
+    font-size: 24rpx;
+    color: #666666;
+    margin-top: 34rpx;
+}
+
+.about_price {
+    display: flex;
+    flex-direction: row;
+    margin-top: 34rpx;
+}
+
+.cur_price_view{
+    width: 150rpx;
+}
+
+.cur_price{
+    font-size: 32rpx;
+    margin-top: 50rpx;
+    color:#EB6B5F;
+}
+
+.org_price_view{
+    width: 150rpx
+}
+
+.org_price{
+    font-size: 24rpx;
+    margin-top: 55rpx;
+    margin-left: 30rpx;
+    color: #cccccc;
+    text-decoration:line-through;
+}
+
+.jiantou{
+    width: 30rpx;
+    height: 30rpx;
+    margin-top: 10rpx;
+    margin-left: 45rpx;
+}
+
+.jifen{
+  font-size: 22rpx;
+  color: #ffffff;
+  height: 40rpx;
+  line-height: 40rpx;
+  background-color: #fe4a65;
+  text-align: center;
+  width: 180rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+}

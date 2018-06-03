@@ -1,0 +1,92 @@
+.after_pay_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.order_view,.total_amount_view{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70rpx;
+    margin-top: 3%;
+}
+
+.order_title_view,.amount_title_view{
+    width: 20%; 
+    margin-left: 3%
+}
+
+.order_titel,.order_no,.amount_title,.amount{
+    font-size: 34rpx;
+    color: #000;
+}
+
+.order_no_view,.amount_view{
+    width: 30%; 
+    margin-left: 4%;
+}
+
+.pay_status_view{
+    width: 100%;
+    height: 300rpx;
+    text-align: center;
+}
+
+.iconAndText{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 20%;
+    margin-left: 38%;
+    margin-top: 17%;
+}
+
+.pay_status{
+    font-size: 38rpx;
+    color: #f1ab16;
+    line-height: 60rpx;
+    margin-left: 10rpx;
+}
+
+.icon{
+   line-height: 60rpx;
+}
+
+.thin_line{
+    margin-top: 10rpx;
+    background-color: #eeeeee;
+    height: 3rpx;
+    width: 100%;
+}
+
+.strong_line{
+    margin-top: 10rpx;
+    background-color: #eeeeee;
+    height: 15rpx;
+    width: 100%;
+}
+
+.buttons{
+    width: 100%;
+    height: 80rpx;
+    margin-top: 15%;
+    margin-bottom: 4%;
+}
+
+.review_orders_view,.repay_view{
+    height: 80rpx;
+    text-align: center;
+    width: 40%;
+    margin-left: 30%;
+    background-color: #51A938;
+    border: 1px solid #a4a4a4;
+    border-radius: 5px;
+}
+
+.review_orders,.repay{
+    font-size: 32rpx;
+    line-height: 80rpx;
+    color: #ffffff;
+}

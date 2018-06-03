@@ -1,0 +1,154 @@
+/**share.wxss**/
+page{  
+  background: #fafafa;
+  height:100%;  
+}  
+
+.share_container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.pro_info_view{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 400rpx;
+}
+
+.image_view{
+  width: 55%;
+  height: 100%;
+  margin-left: 3%;
+}
+
+.pro_image{
+  width: 100%;
+  height: 100%;
+}
+
+.nameAndPrice_view{
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5%;
+}
+
+.pro_name_view{
+  width: 100%;
+  margin-top:10%;
+  word-break: break-all;
+  text-overflow: ellipsis; 
+  display: -webkit-box;  
+  -webkit-line-clamp: 4;  
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pro_name{
+  font-size: 32rpx;
+  color: #000;
+}
+
+.price_view{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+  margin-top:20%;
+}
+
+.org_price{
+  font-size: 32rpx;
+  color: #9a9a9a;
+  text-decoration:line-through;
+}
+
+.group_price{
+  font-size: 40rpx;
+  color: #dc0e11;
+}
+
+.line{
+    margin-top: 2%;
+    background-color: #e8e8e8;
+    height: 2rpx;
+    width: 95%;
+    margin-left: 5%;
+}
+
+.group_members_view{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.group_member_view{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.one_member_view{
+  width: 75rpx;
+  height: 75rpx;
+  margin-left: 2.4%;
+  margin-top: 2%;
+}
+
+.avatar{
+  width: 100%;
+  height: 100%;
+  border:0 solid #ff0000;
+  border-radius:100px;
+}
+
+.qianggou_button_view{
+  width: 100%;
+}
+
+.qianggou_button{
+  width: 25%;
+  height: 70rpx;
+  text-align: center;
+  border: 2rpx solid #f3a09d;
+  border-radius:15rpx;
+  margin-left:2.4%;
+  margin-top:2%;
+}
+
+.qianggou{
+  font-size: 36rpx;
+  color: #c81324;
+  line-height: 70rpx;
+}
+
+.buttons{
+    width: 100%;
+    height: 100rpx;
+    margin-top: 5%;
+}
+
+.share_view{
+    height: 100rpx;
+    text-align: center;
+    width: 90%;
+    background-color: #DE443B;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    border: 2rpx solid #DE443B;
+    border-radius:10rpx;
+}
+
+.share{
+    font-size: 16px;
+    line-height: 100rpx;
+    color: #fff;
+}
+
+button{
+  background-color:#DD3029;
+}

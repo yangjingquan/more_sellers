@@ -1,0 +1,39 @@
+<!--business.wxml--> 
+<view class="bis_container">  
+    <view class="category_view">
+        <scroll-view class="scroll-view_H" scroll-x="true">
+            <block wx:for="{{cat_info}}">
+                <view class="cat_text_view" data-catid="{{item.cat_id}}"  bindtap="getBisListByCat">
+                  <view class="cat_text {{navBar == item.cat_id ? 'active' : ''}}">{{item.cat_name}}</view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+    <block wx:for="{{bis_info}}">
+        <view class="bis_view">
+            <view class="bis_title_view" bindtap="bisTap" data-bisid="{{item.bis_id}}">
+                <view class="bis_img_view">
+                    <image class="bis_img" src="/pics/index_swiper/bis.jpg"></image>
+                </view>
+                <view class="bis_name_view">
+                    <text class="bis_name">{{item.bis_name}}</text>
+                    <view class="group_img_view" wx:if="{{item.is_pintuan == 1}}">
+                        <image class="group_img" src="/pics/icons/group_icon.png" mode="widthFix"></image>
+                    </view>
+                </view>
+                
+                <view class="go_bis_view">
+                    <text class="go_bis">进入店铺 ></text>
+                </view>
+            </view>
+            <view class="pro_view">
+                <block wx:for="{{item.pro_info}}" wx:for-item="itemPro">
+                    <view class="single_img_view" bindtap="proTap" data-proid="{{itemPro.pro_id}}">
+                        <image class="single_img" src="{{imgUrl + itemPro.thumb}}"></image>
+                    </view>
+                </block>
+            </view>    
+        </view>
+        <view class="thin_line"></view>
+    </block>
+</view>

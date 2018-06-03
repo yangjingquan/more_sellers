@@ -1,0 +1,45 @@
+<view class="team_container">
+    <view class="side">
+      <view class="floor1">
+        <view class="content_view">
+          <text class="input1">ID:{{res.a}}</text>
+          <text class="input2">{{res.a_name}}</text>
+        </view>
+      </view>
+      <view class="floor2">
+          <image src='/pics/icons/branch1.png' class="img1"></image>
+      </view>
+      <view class="floor3">
+        <view class="content_view3_1">
+          <text class="input1">ID:{{res.b1}}</text>
+          <text class="input2">{{res.b1_name}}</text>
+        </view>
+        <view class="content_view3_2">
+          <text class="input1">ID:{{res.b2}}</text>
+          <text class="input2">{{res.b2_name}}</text>
+        </view>
+      </view>
+      <view class="floor4">
+        <image src='/pics/icons/branch1.png' class="img2"></image>
+        <image src='/pics/icons/branch1.png' class="img3"></image>
+      </view>
+      <view class="floor5">
+        <view class="content_view5_1">
+          <text class="input1">ID:{{res.c1}}</text>
+          <text class="input2">{{res.c1_name}}</text>
+        </view>
+        <view class="content_view5_2">
+          <text class="input1">ID:{{res.c2}}</text>
+          <text class="input2">{{res.c2_name}}</text>
+        </view>
+        <view class="content_view5_3">
+          <text class="input1">ID:{{res.c3}}</text>
+          <text class="input2">{{res.c3_name}}</text>
+        </view>
+        <view class="content_view5_4">
+          <text class="input1">ID:{{res.c4}}</text>
+          <text class="input2">{{res.c4_name}}</text>
+        </view>
+      </view>
+	</view>
+</view>

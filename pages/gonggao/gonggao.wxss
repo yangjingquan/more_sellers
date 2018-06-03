@@ -1,0 +1,34 @@
+.index{
+  width: 100%;
+  height: 100%;
+}
+
+.recommend{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 150rpx;
+    margin-left: 10%;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+
+.pro_name{
+    font-size: 35rpx;
+    color: #000000;
+    margin-top: 30rpx;
+}
+
+.time{
+    font-size: 24rpx;
+    color: #666666;
+    margin-bottom: 2rpx;
+}
+
+
+

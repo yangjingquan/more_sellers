@@ -1,0 +1,11 @@
+<view class="service_container">
+    <view class="intro1_view">
+        <text class="intro1">新零售  新知变</text>
+    </view>
+    <view class="intro2_view">
+        <text class="intro2">小程序  大市场</text>
+    </view>
+    <view class="intro3_view">
+        <text class="intro3">联系电话：<text class="tel_text">400-860-8399</text></text>
+    </view>
+</view>

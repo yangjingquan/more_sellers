@@ -1,0 +1,70 @@
+<!--shoppingcart.wxml-->
+<view class="container">
+    <block wx:for="{{cart_info}}">
+        <view class="bis_title_view">
+            <view class="bis_checkbox_view" bindtap="bindBisbox" data-bisid="{{item.bis_id}}" data-bisstatus="{{item.bis_status}}">
+                <icon wx:if="{{item.bis_status}}" type="success_no_circle" size="15"  class="checkbox3" catchtap="bindBisbox" data-bisid="{{item.bis_id}}" data-bisstatus="{{item.bis_status}}"/>
+                 <icon wx:else type="no_circle" size="15" class="checkbox3" catchtap="bindBisbox" data-bisid="{{item.bis_id}}" data-bisstatus="{{item.bis_status}}"/> 
+            </view>
+            <view class="bis_img_view">
+                <image class="bis_img" src="{{imgUrl + item.bis_thumb}}"></image>
+            </view>
+            <view class="bis_name_view">
+                <text class="bis_name">{{item.bis_name}}</text>
+            </view>
+        </view>
+        <view class="line"></view>
+        <block wx:for="{{item.pro_info}}" wx:for-item="proItem">
+            <view class="pro_info">
+                <view class="checkbox_view" bindtap="bindCheckbox" data-cartid="{{proItem.cart_id}}" data-status="{{proItem.selected}}">
+                    <icon wx:if="{{proItem.selected}}" type="success_no_circle" size="15" catchtap="bindCheckbox" data-cartid="{{proItem.cart_id}}" data-status="{{proItem.selected}}" class="checkbox1"/>
+                    <icon wx:else type="no_circle" size="15" catchtap="bindCheckbox" data-cartid="{{proItem.cart_id}}" data-status="{{proItem.selected}}" class="checkbox1"/>
+                </view>
+                <view class="pro_image_view">
+                    <image class="pro_image" src="{{imgUrl + proItem.thumb}}"></image>
+                </view>
+                <view class="nameAndPrice">
+                    <view class="pro_name_view">
+                        <text class="pro_name">{{proItem.p_name}}</text>
+                    </view>
+                    <view class="guige_view">
+                        <text class="guige">规格：{{proItem.con_content1}}</text>
+                    </view>
+                    <view class="priceAndCount">
+                        <view class="price_view">
+                            <text class="price">￥{{proItem.associator_price}}</text>
+                        </view>
+                        <view class="count_view">
+                            <view class="sub_view" bindtap="subtap" data-selectedcount="{{proItem.count}}" data-cartid="{{proItem.cart_id}}" data-status="{{proItem.selected}}">
+                                <text class="sub {{proItem.count == 1 ? 'disabled' : ''}}" data-selectedcount="{{proItem.count}}" data-cartid="{{proItem.cart_id}}" data-status="{{proItem.selected}}" catchtap="subtap">-</text>
+                            </view>
+                            <view class="count_view1">
+                                <text class="count">{{proItem.count}}</text>
+                            </view>
+                            <view class="plus_view" bindtap="plustap" data-selectedcount="{{proItem.count}}" data-cartid="{{proItem.cart_id}}" data-status="{{proItem.selected}}">
+                                <text class="plus" data-selectedcount="{{proItem.count}}" data-cartid="{{proItem.cart_id}}" data-status="{{proItem.selected}}" catchtap="plustap">+</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="delete_view" bindtap="deleteCart" data-cartid="{{proItem.cart_id}}">
+                        <text class="delete" catchtap="deleteCart" data-cartid="{{proItem.cart_id}}">删除</text>
+                    </view>
+                </view>
+            </view>
+            <view class="short_line"></view>
+        </block>
+        <view class="strong_line"></view>
+    </block>
+    <view class="bottoms">
+        <view class="check_view" bindtap="bindSelectAll" >
+            <icon wx:if="{{selectedAllStatus}}" type="success_no_circle" size="15" catchtap="bindSelectAll" class="checkbox2"/>
+            <icon wx:else type="no_circle" size="15" catchtap="bindSelectAll" class="checkbox2"/>
+        </view>
+        <view class="total_price_view">
+            <text class="total_price">总计：￥{{total_price}}</text>
+        </view>
+        <view class="jiesuan_view" bindtap="jiesuan">
+            <text class="jiesuan" catchtap="jiesuan">去结算</text>
+        </view>
+    </view>
+</view>

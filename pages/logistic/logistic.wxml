@@ -1,0 +1,31 @@
+<view class="logistic_container">
+  <view class="logistic_info_view">
+    <view class="l1">
+      <image class="icon" src="/pics/icons/logistic.png"></image>
+    </view>
+    <view class="l2">
+      <text class="order_no">运单号：{{express_no}}</text>
+      <text class="order_no">{{post_mode}}</text>
+      <text class="order_offer">本数据由第三方接口提供</text>
+    </view>
+    
+  </view>
+  <view class="trace">
+    <text class="trace_title">最新状态</text>
+    <view class="trace_view_first">
+      <text class="trace_date_first">{{first_trace.AcceptTime}}</text>
+      <text class="trace_content_first">{{first_trace.AcceptStation}}</text>
+    </view>
+  </view>
+  <view class="trace">
+    <text class="trace_title">全部状态</text>
+    <block wx:for="{{traces}}" wx:key="{{key}}">
+      <view class="trace_view">
+        <view class="single_trace_view">
+          <text class="trace_date">{{item.AcceptTime}}</text>
+          <text class="trace_content">{{item.AcceptStation}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

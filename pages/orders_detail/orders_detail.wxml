@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="status">
+    <text class="status_text">{{order_info.status_text}}</text>
+    <image class="status_img" src="/pics/icons/ordersdetail1.png"></image>
+  </view>
+  <view class="order">
+    <image class="order_img" src="/pics/icons/ordersdetail2.png"></image>
+    <view class="order_text_view">
+      <text class="order_text">{{order_info.rec_name}} {{order_info.mobile}}</text>
+      <text class="order_text">{{order_info.address}}</text>
+    </view>
+  </view>
+  <block wx:for="{{order_info.pro_info}}" wx:for-item="itemPro">
+  <view class="goods">
+    <image class="goods_img" src="http://cp.dxshuju.com/{{itemPro.thumb}}"></image>
+    <view class="goods_text_view">
+      <text class="goods_text1">{{itemPro.p_name}}</text>
+      <text class="goods_text2">[规格：{{itemPro.con_content1 + " " + itemPro.con_content2}}]</text>
+      <text class="goods_text3">数量：{{itemPro.count}} 单价：¥{{itemPro.unit_price}} 小计：¥{{itemPro.amount}}</text>
+    </view>
+  </view>
+  </block>
+  <view class="price">
+      <text class="price_text1">货款: ¥{{order_info.pro_total_amount}} 运费: ¥{{order_info.transport_fee}}</text>
+      <text class="price_text2">{{order_info.order_type == 1 ? '消费积分：' : (order_info.order_type == 2 ? '' : '总价：')}}{{order_info.total_amount}}</text>
+  </view>
+  <view class="detail">
+      <text class="detail_text">订单编号：{{order_info.order_no}}</text>
+      <text class="detail_text">支付方式：{{order_info.payment_text}}</text>
+      <text class="detail_text">下单时间：{{order_info.create_time}}</text>
+      <text wx:if="{{order_info.order_status > 2}}" class="detail_text">付款时间：{{order_info.pay_time}}</text>
+      <text wx:if="{{order_info.order_status > 3}}" class="detail_text">快递方式：{{order_info.post_mode}}</text>
+      <text wx:if="{{order_info.order_status > 3}}" class="detail_text">快递单号：{{order_info.express_no}}</text>
+  </view>
+</view>

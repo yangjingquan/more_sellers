@@ -1,0 +1,105 @@
+<view class="c_order_container">
+     <view wx:if="{{showAddress}}" class="address_view" catchtap="choose_address">
+        <view class="nameAndMobile">
+            <view class="name_view">
+                <text class="name">{{cart_info.address_info.rec_name}}</text>
+            </view>
+            <view class="mobile_view">
+                <text class="mobile">{{cart_info.address_info.mobile}}</text>
+            </view>
+        </view>
+        <view class="address_view1">
+            <text class="address">{{cart_info.address_info.address}}</text>
+        </view>
+    </view> 
+    <view wx:else class="address_view" catchtap="choose_address">
+        <view class="notice_view">
+            <text class="notice">请选择您的收货地址!</text>
+        </view>
+    </view>
+    <view class="strong_line"></view>
+    <view class="pro_info">
+        <view class="img_view">
+            <image class="img" src="{{imgUrl + pro_info.thumb}}"></image>
+        </view>
+        <view class="nameAndPrice">
+            <view class="pro_name_view">
+                <text class="pro_name">{{pro_info.p_name}}</text>
+            </view>
+            <view class="guige_view">
+                <text class="guige">规格：{{pro_info.con_content1}}</text>
+            </view>
+            <view class="price_view">
+                <view class="unit_price_view">
+                    <text class="price">{{pro_info.jf_price}}</text>
+                </view>
+                <view class="count_view">
+                    <view class="sub_view" bindtap="subtap" data-selectedcount="{{count}}" data-cartid="{{pro_info.cart_id}}">
+                        <text class="sub {{count == 1 ? 'disabled' : ''}}" data-selectedcount="{{count}}" data-cartid="{{cart_id}}" catchtap="subtap">-</text>
+                    </view>
+                    <view class="count_view1">
+                        <text class="count">{{count}}</text>
+                    </view>
+                    <view class="plus_view" bindtap="plustap" data-selectedcount="{{count}}" data-cartid="{{pro_info.cart_id}}">
+                        <text class="plus" data-selectedcount="{{count}}" data-cartid="{{pro_info.cart_id}}" catchtap="plustap">+</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="thin_line"></view>
+    <form bindsubmit="formSubmit" report-submit="true">
+        <view wx:if="{{showFreightView}}" class="transport_view">
+            <view class="transport_picker_label_view">
+                <label class="transport_label">快递种类：</label>
+            </view>
+            <view class="transport_picker_view">
+                <picker mode="selector" bindchange="bindTypeChange" value="{{index}}" name="transport_type" range="{{transport_type}}">
+                    <view class="transport_picker">{{transport_type[index]}} <image class="freight_icon1" src="/pics/icons/arrow1.png"></image></view>
+                </picker>
+            </view>
+        </view>
+        <view wx:if="{{showFreightView}}" class="thin_line"></view>
+        <view class="freight_view" bindtap="getTransportFeeDetail">
+            <text class="freight_text">运费：</text>
+            <text class="freight" >￥{{transport_fee}}</text>
+            <image class="freight_icon2" src="/pics/icons/arrow2.png"></image>
+        </view>
+        <view wx:if="{{showTransportFeeDetail}}" class="thin_line"></view>
+        <view wx:if="{{showTransportFeeDetail}}" class="weight_view1">
+            <view wx:if="{{transportType == 1}}">
+                <text class="total_weight_title">重量：</text>
+                <text class="total_weight_text">{{total_weight}}Kg</text>
+                <text class="first_heavy_title">首重：</text>
+                <text class="first_heavy_text">{{transport_info[index]['first_heavy']}}元/1Kg</text>
+                <text class="continue_heavy_title">续重：</text>
+                <text class="continue_heavy_text">{{transport_info[index]['continue_heavy']}}元/{{transport_info[index]['continue_stage']}}Kg</text>
+            </view>
+            <view wx:if="{{transportType == 2}}">
+                <text class="ykj_title">一口价：</text>
+                <text class="ykj_text">￥{{transport_fee}}</text>
+            </view> 
+        </view>
+        <view class="thin_line"></view>
+        <view class="remark_view">
+            <label class="remark_label">备注：</label>
+            <input class="remark_input" name="remark" type='text' placeholder='选填，60字以内'></input>
+        </view>
+        <view class="strong_line"></view>
+        <view class="amount_view">
+            <view class="amount_title">
+                <text class="total_title">共计：</text>
+            </view>
+            <view class="amount_content">
+                <text class="jifen">{{jifen_amount}} 积分</text>
+                <text class="amount">{{total_amount}} 元</text>
+            </view>
+        </view>
+        <view class="thin_line"></view>
+        <view class="buttons">
+            <view class="pay_view">
+                <button class="pay" formType="submit">去支付</button>
+            </view>
+        </view>
+    </form>
+</view>

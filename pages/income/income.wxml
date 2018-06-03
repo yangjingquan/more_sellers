@@ -1,0 +1,28 @@
+<view class="income_container">
+  <view class="jine">
+    <text class="jine1">可提现余额(元)</text>
+    <text class="jine2">{{ketixian}}</text>
+    <text class="jine3">提现中的金额：￥{{tixianzhong}}</text>
+  </view>
+  <form bindsubmit="replyTixian">
+    <view class="income_view">
+
+      <view class="name_view">
+        <text class="name_title">我的姓名：</text>
+        <input type="text" class="name_text" name="name" />
+      </view>
+
+      <view class="id_no_view">
+        <text class="id_no_title">身份证号:</text>
+        <input type="text" class="id_no_text" name="id_no" />
+      </view>
+
+
+    </view>
+    <view class="buttons">
+      <view class="tx_button_view">
+        <button class="tixian" formType="submit">申请提现</button>
+      </view>
+    </view>
+  </form>
+</view>

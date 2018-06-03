@@ -1,0 +1,29 @@
+<view class="recorder_container">
+  <view class="tongji">
+    <text class="tongji1">截止目前已产生推荐订单(条)</text>
+    <text class="tongji2">{{count}}</text>
+  </view>
+  <block wx:for="{{rec_info}}">
+    <view class="order_con">
+      <view class="order_con1">
+        <text class="order_date">{{item.create_time}}</text>
+        <text class="order_no">订单号：{{item.order_no}}</text>
+      </view>
+      <view class="order_con2">
+        <view class="images">
+          <image class="order_icon" src="/pics/icons/recordercon1.png"></image>
+        </view>
+        <text class="order_buy">买家：{{item.buyer_name}}</text>
+        <text class="order_total">金额：{{item.total_amount}}</text>
+      </view>
+      <view class="order_con2">
+        <view class="images">
+          <image class="order_icon" src="/pics/icons/recordercon2.png"></image>
+        </view>
+        <text class="order_buy">本单获得推荐收入：</text>
+        <text class="order_income">+{{item.rec_amount}}</text>
+      </view>
+    </view>
+  </block>
+
+</view>
