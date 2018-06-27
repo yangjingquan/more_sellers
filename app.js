@@ -162,21 +162,15 @@ App({
   globalData: {
     userInfo: null,
     bis_id : '',
-    appid: "wx7e8fa0ee9987b8f7",
-    secret: "58218893e807c3a9dd21ae105f56c46b",
+    appid: "********************",
+    secret: "********************",
     openid : '',
     rec_id : '',
-    //测试(西部数码)
-    imgUrl: "http://mall.dxshuju.com:8000/",
-    requestUrl: "https://wxapp.dxshuju.com/index",
-    acodeUrl: "https://wxapp.dxshuju.com/",
-    payUrl: "https://wxapp.dxshuju.com/index/pay0/pay",
-    payGroupUrl: "https://wxapp.dxshuju.com/index/grouppay0/pay",
-    //正式(腾讯云)
-    // imgUrl: "http://cp.dxshuju.com/",
-    // requestUrl: "https://xcx001.dxshuju.com/index",
-    // acodeUrl: "https://xcx001.dxshuju.com/",
-    // payUrl: "https://xcx001.dxshuju.com/index/pay0/pay",
-    // payGroupUrl: "https://xcx001.dxshuju.com/index/grouppay0/pay"
+    //测试
+    imgUrl: "********************",
+    requestUrl: "********************",
+    acodeUrl: "********************",
+    payUrl: "********************",
+    payGroupUrl: "********************",
   }
 })
