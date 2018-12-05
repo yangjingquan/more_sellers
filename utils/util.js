@@ -34,8 +34,15 @@ function imageUtil(e) {
   return imageSize;
 }
  
+function checkLogin() {
+  if (!app.globalData.openid) {
+    return true;
+  }
+  return false;
+}
 
 module.exports = {
   formatTime: formatTime,
-  imageUtil: imageUtil
+  imageUtil: imageUtil,
+  checkLogin: checkLogin
 }

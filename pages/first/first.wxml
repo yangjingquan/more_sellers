@@ -1,0 +1,16 @@
+<!-- 授权哲罩层 -->
+  <view class="box" wx:if="{{sq_zhengti}}">
+    <view class='sq_box' wx:if="{{sq_xs}}">
+      <view class='sq_title'>微信授权</view>
+      <view class='sq_app'>
+        <image class='sq_img' src='/pics/icons/wx_login.png'></image>
+        <text class='sq_sq'>一盆社区申请授权</text>
+      </view>
+      <view class='sq_ms'>
+        <view class='sq_dian'></view>
+        <text>为了提供更好的服务与体验</text>
+      </view>
+      <button class='sq_btn' open-type='getUserInfo' wx:if="{{canIUse}}" bindgetuserinfo="bindGetUserInfo" bindtap='aa'>通过授权 </button>
+    </view>
+    <view class='sq_yy'></view>
+  </view>

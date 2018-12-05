@@ -45,8 +45,8 @@
     "pages/jf_confirm_order/confirm_order",
     "pages/jf_pro_detail/detail",
     "pages/jf_products/jf_products",
-    "pages/recommend/recommend"
-   
+    "pages/recommend/recommend",
+    "pages/first/first"
   ],
 
   "window": {

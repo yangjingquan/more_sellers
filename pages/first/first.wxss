@@ -1,0 +1,100 @@
+.box{
+  width: 100%;
+  height: 100%;
+  background-color:#fff; 
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index:1000;
+}
+.sq_yy{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5)
+}
+.sq_box{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -300rpx;
+  margin-top: -310rpx; 
+  z-index: 2;
+  width: 600rpx;
+  height:490rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+.sq_title{
+  width: 100%;
+  height: 51rpx;
+  font-size: 40rpx;
+  line-height: 51rpx;
+  padding: 50rpx 0;
+  text-indent: 60rpx;
+  font-weight: bold;
+}
+.sq_app{
+  width: 100%;
+  height: 74rpx;
+}
+.sq_img{
+  float: left;
+  width:  74rpx;
+  height: 74rpx;
+  padding-left: 70rpx;
+}
+.sq_sq{
+  float: left;
+  text-indent: 30rpx;
+  line-height: 74rpx;
+  font-size: 32rpx;
+}
+.sq_ms{
+  width: 450rpx;
+  border-top: 1rpx solid #bfbfbf;
+  height: 50rpx;
+  margin: 60rpx auto 0;
+  position: relative;
+}
+.sq_dian{
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 5rpx;
+  background-color: #aaa;
+  position: absolute;
+  left:10rpx;
+  top:20rpx; 
+}
+.sq_ms text{
+  display: block;
+  width: 370rpx;
+  height: 50rpx;
+  /* background-color: red; */
+  padding:0  40rpx;
+  color: #aaa;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}
+.sq_btn{
+  width: 240rpx;
+  height: 140rpx;
+  padding: none;
+  padding-top: 50rpx;
+  margin: none;
+  font-size: 38rpx;
+  line-height: 50rpx;
+  color: #1aad19;
+  font-weight: bold;
+  background-color: #fff;
+}
+button::after{
+border:none;
+}
+input{
+outline:none;
+border:none;
+list-style: none;
+}
