@@ -10,7 +10,6 @@ Page({
   onLoad : function(option){
     var that = this
     var mem_id = option.mem_id
-    console.log(mem_id)
     wx.request({
       url: app.globalData.requestUrl + '/bis/getRecOrders',
       data: { mem_id: mem_id },
@@ -126,7 +125,6 @@ Page({
       },
       method: 'post',
       success: function (res) {
-        console.log(res.data)
         that.setData({
           res1: res.data.result1,
           res2: res.data.result2

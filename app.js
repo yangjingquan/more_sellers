@@ -7,8 +7,8 @@ App({
       success: function (res) {
         if (!res.data || res.data == '') {
           //获取用户信息
-          // var loginStatus = true;
-          that.getUserInfo()
+          var loginStatus = true;
+          that.getUserInfo(loginStatus)
         } else {
           that.globalData.openid = res.data
           wx.getStorage({
@@ -16,16 +16,16 @@ App({
             success: function (ress) {
               if (!ress.data || ress.data.length == 0) {
                 //获取用户信息
-                // var loginStatus = true;
-                that.getUserInfo()
+                var loginStatus = true;
+                that.getUserInfo(loginStatus)
               } else {
                 that.globalData.userInfo = ress.data
               }
             },
             fail: function (ress) {
               //获取用户信息
-              // var loginStatus = true;
-              that.getUserInfo()
+              var loginStatus = true;
+              that.getUserInfo(loginStatus)
             }
           })
         }
@@ -33,15 +33,59 @@ App({
       },
       fail: function (res) {
         //获取用户信息
-        // var loginStatus = true;
-        that.getUserInfo()
+        var loginStatus = true;
+        that.getUserInfo(loginStatus)
       }
     })
   },
-  getUserInfo: function () {
-    wx.navigateTo({
-      url: '/pages/first/first',
-    })
+  getUserInfo: function (loginStatus) {
+    var that = this
+    if (!loginStatus) {
+      wx.openSetting({
+        success: function (data) {
+          if (data) {
+            if (data.authSetting["scope.userInfo"] == true) {
+              loginStatus = true;
+              wx.getUserInfo({
+                withCredentials: false,
+                success: function (data) {
+                  that.globalData.userInfo = data.userInfo
+                  //将userInfo存入缓存
+                  wx.setStorage({
+                    key: "userInfo",
+                    data: data.userInfo
+                  })
+                  // that.getOpenId()
+                }
+              });
+            }
+          }
+        }
+      });
+    } else {
+      wx.login({
+        success: function (res) {
+          if (res.code) {
+            wx.getUserInfo({
+              withCredentials: false,
+              success: function (data) {
+                //将userInfo存入缓存
+                wx.setStorage({
+                  key: "userInfo",
+                  data: data.userInfo
+                })
+                that.globalData.userInfo = data.userInfo
+                // that.getOpenId()
+              },
+              fail: function () {
+                loginStatus = false;
+
+              }
+            });
+          }
+        }
+      })
+    }
   },
   getOpenId: function () {
     var that = this
@@ -116,6 +160,7 @@ App({
     //测试
     imgUrl: "http://cp.dxshuju.com/",
     requestUrl: "https://xcx001.dxshuju.com/index",
+    extraRequestUrl: "https://xcx001.dxshuju.com/business",
     acodeUrl: "https://xcx001.dxshuju.com/",
     payUrl: "https://xcx001.dxshuju.com/index/pay/pay",
     payGroupUrl: "https://xcx001.dxshuju.com/index/grouppay/pay"

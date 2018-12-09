@@ -32,13 +32,13 @@ Page({
     ],
     hotList1: [
       {
-        pic: "/pics/cat/006.png",
-        title: "商城公告",
+        pic: "/pics/cat/near_cat.png",
+        title: "附近餐饮",
         cat_id: "../gonggao/gonggao"
       },
       {
-        pic: "/pics/cat/007.png",
-        title: "我的团队",
+        pic: "/pics/cat/near_mall.png",
+        title: "附近商家",
         cat_id: "../recommend/recommend"
       },
       {
@@ -102,19 +102,35 @@ Page({
         })
       }
     }),
-      //新品列表
-      wx.request({
-        url: app.globalData.requestUrl + '/index/getNewProInfoMut',
+    //新品列表
+    wx.request({
+      url: app.globalData.extraRequestUrl + '/index/getNewProInfoMut',
         data: {},
         header: {
           'content-type': ''
         },
         success: function (res) {
+          console.log(res.data.result)
           that.setData({
             new_pro_info: res.data.result
           })
         }
       })
+    },
+
+  //判断是否被授权
+  onReady: function () {
+     wx: wx.getSetting({
+      success: function (res) {
+        if (!res.authSetting['scope.userInfo']) {
+          wx.reLaunch({
+            url: '/pages/first/first',
+          })
+        }
+
+      }
+    })
+    
   },
   //获取详情
   getProDetail: function (event) {

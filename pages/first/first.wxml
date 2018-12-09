@@ -3,8 +3,8 @@
     <view class='sq_box' wx:if="{{sq_xs}}">
       <view class='sq_title'>微信授权</view>
       <view class='sq_app'>
-        <image class='sq_img' src='/pics/icons/wx_login.png'></image>
-        <text class='sq_sq'>一盆社区申请授权</text>
+        <image class='sq_img' src='../../imgs/logo.jpg'></image>
+        <text class='sq_sq'>轻商轻站申请授权</text>
       </view>
       <view class='sq_ms'>
         <view class='sq_dian'></view>

@@ -1,13 +1,12 @@
 <!--business.wxml--> 
 <view class="bis_container">  
     <view class="category_view">
-        <scroll-view class="scroll-view_H" scroll-x="true">
-            <block wx:for="{{cat_info}}">
-                <view class="cat_text_view" data-catid="{{item.cat_id}}"  bindtap="getBisListByCat">
-                  <view class="cat_text {{navBar == item.cat_id ? 'active' : ''}}">{{item.cat_name}}</view>
-                </view>
-            </block>
-        </scroll-view>
+        <view class="mall_list_view">
+            <text class="mall_list_text">商家列表</text>
+        </view>
+        <view class="catering_list_view">
+            <text class="catering_list_text">餐饮列表</text>
+        </view>
     </view>
     <block wx:for="{{bis_info}}">
         <view class="bis_view">

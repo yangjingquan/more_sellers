@@ -48,8 +48,8 @@ Page({
     },
     //跳转到购物车
     goShoppingCart: function (event) {
-      if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-        app.getUserInfo()
+      if (!app.globalData.userInfo) {
+        app.getUserInfo(true)
       } else {
         wx.switchTab({
           url: '/pages/shoppingCart/shoppingcart'
@@ -60,8 +60,8 @@ Page({
     //选择规格（加入购物车）
     selectGuige: function (e) {
         var that = this
-      if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-        app.getUserInfo()
+      if (!app.globalData.userInfo) {
+        app.getUserInfo(true)
         } else {
           var pro_id2 = e.target.dataset.proid
           var from = e.target.dataset.from
@@ -93,8 +93,8 @@ Page({
     //选择规格（立即购买）
     buyNow: function (e) {
       var that = this
-      if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-        app.getUserInfo()
+      if (!app.globalData.userInfo) {
+        app.getUserInfo(true)
       } else {
         var pro_id3 = e.target.dataset.proid
         var from = e.target.dataset.from

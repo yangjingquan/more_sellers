@@ -6,17 +6,10 @@ Page({
   data: {
     userInfo: {}
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   onShow: function () {
     var that = this
-    console.log(app.globalData.userInfo)
-    if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-      app.getUserInfo()
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
     }else{
       that.setData({
         userInfo:app.globalData.userInfo,
@@ -29,8 +22,8 @@ Page({
     
   },
   myOrderTap : function(){
-    if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-      app.getUserInfo()
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
     } else {
       wx.navigateTo({
         url: '../orders/myorder',
@@ -38,8 +31,8 @@ Page({
     }
   },
   myGroupOrderTap: function () {
-    if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-      app.getUserInfo()
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
     } else {
       wx.navigateTo({
         url: '../group_orders/myorder',
@@ -47,8 +40,8 @@ Page({
     }
   },
   myAddressTap: function () {
-    if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-      app.getUserInfo()
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
     } else {
       wx.navigateTo({
         url: '../address/address?from=mine',
@@ -56,8 +49,8 @@ Page({
     }  
   },  
   getService: function() {
-    if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-      app.getUserInfo()
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
     } else {
       wx.navigateTo({
         url: '../service/service',
@@ -65,8 +58,8 @@ Page({
     } 
   },
   myAcode : function(){
-    if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-      app.getUserInfo()
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
     } else {
       wx.navigateTo({
         url: '/pages/acode/acode',
@@ -74,8 +67,8 @@ Page({
     }
   },
   getRecOrders : function() {
-    if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-      app.getUserInfo()
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
     } else {
       wx.navigateTo({
         url: '/pages/rec_orders/order',
@@ -83,8 +76,8 @@ Page({
     }
   },
   getMyRecInfo: function () {
-    if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-      app.getUserInfo()
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
     } else {
       wx.navigateTo({
         url: '/pages/myteam/myteam',
@@ -92,8 +85,8 @@ Page({
     }
   },
   getMyJifen: function () {
-    if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-      app.getUserInfo()
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
     } else {
       wx.navigateTo({
         url: '/pages/jifen/jifen',
@@ -101,8 +94,8 @@ Page({
     }
   },
   getMyIncome: function () {
-    if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-      app.getUserInfo()
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
     } else {
       //获取可提现金额和提现中金额
       wx.request({
@@ -124,8 +117,8 @@ Page({
     }  
   },
   replyTixian : function(){
-    if (!app.globalData.userInfo && checkLogin.checkLogin()) {
-      app.getUserInfo()
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
     } else {
       //获取可提现金额和提现中金额
       wx.request({

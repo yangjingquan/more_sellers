@@ -85,8 +85,8 @@
 }
 
 .bis_img_view {
-  width: 180rpx;
-  height: 180rpx;
+  width: 200rpx;
+  height: 200rpx;
 }
 
 .bis_img {
@@ -98,7 +98,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 180rpx;
+  height: 220rpx;
   margin-left: 20rpx;
 }
 
@@ -115,7 +115,7 @@
   height: 60rpx;
 }
 
-.bis_count_view {
+.bis_brand_view {
   width: 80%;
 }
 
@@ -123,11 +123,20 @@
   width: 20%;
 }
 
-.bis_count {
+.bis_brand {
   font-size: 24rpx;
   color: #ccc;
   height: 60rpx;
   line-height: 60rpx;
+}
+
+.distance_view{
+  width: 20%;
+}
+
+.distance{
+  font-size: 24rpx;
+  color: #555555;
 }
 
 .bis_star {
@@ -306,21 +315,22 @@
 
 .row_content {
   width: 100%;
-  height: 540rpx;
   display: flex;
-  flex-direction: row;
-  margin-top: 40rpx;
+  margin-top: 1%;
+  flex-flow: row wrap;
+  align-content: space-around;
 }
 
 .single_pro {
-  width: 325rpx;
-  height: 325rpx;
-  margin-left: 30rpx;
+  width: 235rpx;
+  /* height: 235rpx; */
+  margin-left: 1.5%;
+  margin-top: 2%;
 }
 
 .new_pro_img {
-  width: 325rpx;
-  height: 325rpx;
+  width: 235rpx;
+  height: 235rpx;
 }
 
 .new_pro_name_view {
@@ -341,7 +351,7 @@
 .new_pro_price {
   display: flex;
   flex-direction: row;
-  margin-top: 34rpx;
+  margin-top: 10rpx;
 }
 
 .new_cur_price_view {
@@ -349,7 +359,7 @@
 }
 
 .new_cur_price {
-  font-size: 32rpx;
+  font-size: 28rpx;
   margin-top: 50rpx;
   color: #eb6b5f;
 }
@@ -361,7 +371,7 @@
 .new_org_price {
   font-size: 18rpx;
   margin-top: 55rpx;
-  margin-left: 30rpx;
+  margin-left: 5%;
   color: #ccc;
   text-decoration: line-through;
 }
@@ -432,4 +442,101 @@
   display: inline-block;
   vertical-align: middle;
   margin-left: 5%;
+}
+
+.advertisement_view{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.single_ad_view{
+  width: 94%;
+  height: 300rpx;
+  margin-bottom: 2%;
+  margin-left: 3%;
+  border: 1px solid #ffffff;
+  border-radius: 50rpx;
+}
+
+.ad_pic{
+  width: 100%;
+  height: 300rpx;
+  border-radius: 50rpx;
+}
+
+.rec_mall_view{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rec_content_view{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.rec_content_scroll{
+  width: 100%;
+  height: 240rpx;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.rec_content{
+  width: 30%;
+  height: 240rpx;
+  display:inline-block;
+  margin-left: 1%;
+}
+
+.rec_pic_view{
+  width: 100%;
+  height: 240rpx;
+}
+
+.rec_pic{
+  width: 100%;
+  height: 240rpx;
+}
+
+
+
+
+
+.rec_canyin_view{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rec_canyin_content_view{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.rec_canyin_content_scroll{
+  width: 100%;
+  height: 240rpx;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.rec_canyin_content{
+  width: 30%;
+  height: 240rpx;
+  display:inline-block;
+  margin-left: 1%;
+}
+
+.rec_canyin_pic_view{
+  width: 100%;
+  height: 240rpx;
+}
+
+.rec_canyin_pic{
+  width: 100%;
+  height: 240rpx;
 }

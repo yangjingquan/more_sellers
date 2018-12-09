@@ -39,11 +39,132 @@
     
   </view>
   
+  <view class="advertisement_view">
+    <view class="bis_title_view">
+      <view class="bis_title_view1">
+        <text class="bis_title">-  广告位   -</text>
+      </view>
+    </view>
+    <view class="single_ad_view">
+        <image class="ad_pic" src='/pics/index_swiper/baby1.jpg'></image>
+    </view>
+    <view class="single_ad_view">
+        <image class="ad_pic" src='/pics/index_swiper/baby1.jpg'></image>
+    </view>
+    <view class="single_ad_view">
+        <image class="ad_pic" src='/pics/index_swiper/baby1.jpg'></image>
+    </view>
+  </view>
+
+  
+
+  <view class="new_pro">
+    <view class="recommend_title_view">
+      <text class="recommend_line">-</text>
+      <image class="recommend_pic" src="/pics/other/hot.png"></image>
+      <text class="recommend_title">爆款推荐   -</text>
+    </view>
+    <view class="line"></view>
+    <view class="pro_content">
+      <view class="row_content">
+        <block wx:for="{{new_pro_info}}">
+          <view class="single_pro" bindtap="getProDetail" data-proid="{{item.pro_id}}">
+            <image class="new_pro_img" src="{{imgUrl + item.thumb}}"></image>
+            <view class="new_pro_name_view">
+              <text class="new_pro_name">{{item.p_name}}</text>
+            </view>
+            <view class="new_pro_price">
+              <view class="new_cur_price_view">
+                <text class="new_cur_price">￥{{item.associator_price}}</text>
+              </view>
+              <view class="new_org_price_view">
+                <text class="new_org_price">￥{{item.original_price}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <view class="rec_mall_view">
+    <view class="bis_title_view">
+      <view class="bis_title_view1">
+        <text class="bis_title">-  推荐商家   -</text>
+      </view>
+    </view>
+    <view class="rec_content_view">
+      <scroll-view class="rec_content_scroll" scroll-x>
+          <view class="rec_content">
+              <view class="rec_pic_view">
+                <image class="rec_pic" src='/pics/index_swiper/baby2.jpg'></image>
+              </view>
+          </view>
+          <view class="rec_content">
+              <view class="rec_pic_view">
+                <image class="rec_pic" src='/pics/index_swiper/baby2.jpg'></image>
+              </view>
+          </view>
+          <view class="rec_content">
+              <view class="rec_pic_view">
+                <image class="rec_pic" src='/pics/index_swiper/baby2.jpg'></image>
+              </view>
+          </view>
+          <view class="rec_content">
+              <view class="rec_pic_view">
+                <image class="rec_pic" src='/pics/index_swiper/baby2.jpg'></image>
+              </view>
+          </view>
+          <view class="rec_content">
+              <view class="rec_pic_view">
+                <image class="rec_pic" src='/pics/index_swiper/baby2.jpg'></image>
+              </view>
+          </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="rec_canyin_view">
+      <view class="bis_title_view">
+        <view class="bis_title_view1">
+          <text class="bis_title">-  推荐餐饮   -</text>
+        </view>
+      </view>
+      <view class="rec_canyin_content_view">
+        <scroll-view class="rec_canyin_content_scroll" scroll-x>
+            <view class="rec_canyin_content">
+                <view class="rec_canyin_pic_view">
+                  <image class="rec_canyin_pic" src='/pics/index_swiper/baby3.jpg'></image>
+                </view>
+            </view>
+            <view class="rec_canyin_content">
+                <view class="rec_canyin_pic_view">
+                  <image class="rec_canyin_pic" src='/pics/index_swiper/baby3.jpg'></image>
+                </view>
+            </view>
+            <view class="rec_canyin_content">
+                <view class="rec_canyin_pic_view">
+                  <image class="rec_canyin_pic" src='/pics/index_swiper/baby3.jpg'></image>
+                </view>
+            </view>
+            <view class="rec_canyin_content">
+                <view class="rec_canyin_pic_view">
+                  <image class="rec_canyin_pic" src='/pics/index_swiper/baby3.jpg'></image>
+                </view>
+            </view>
+            <view class="rec_canyin_content">
+                <view class="rec_canyin_pic_view">
+                  <image class="rec_canyin_pic" src='/pics/index_swiper/baby3.jpg'></image>
+                </view>
+            </view>
+        </scroll-view>
+      </view>
+  </view>
 
   <view class="bis_view">
     <view class="bis_title_view">
       <view class="bis_title_view1">
-        <text class="bis_title">-  最新商家   -</text>
+        <text class="bis_title">-  附近店铺   -</text>
       </view>
     </view>
     <view class="bis_content_view">
@@ -55,13 +176,16 @@
           <view class="bis_name_view">
             <text class="bis_name">{{item.bis_name}}</text>
             <view class="bis_count_view">
-              <view class="bis_count_view">
-                <text class="bis_count">经营：{{item.brand}}</text>
+              <view class="bis_brand_view">
+                <text class="bis_brand">经营：{{item.brand}}</text>
               </view>
-              <view class="bis_star_view">
-                <image class="bis_star" src="/pics/icons/5star.png" mode="widthFix"></image>
+              <view class="distance_view">
+                  <text class="distance">500m</text>
               </view>
             </view>
+            <view class="bis_star_view">
+                <image class="bis_star" src="/pics/icons/5star.png" mode="widthFix"></image>
+              </view>
             <text class="bis_address">{{item.bis_address}}</text>
           </view>
         </view>
@@ -70,7 +194,7 @@
   </view>
 
 
-  <view class="recommend">
+  <!-- <view class="recommend">
     <view class="recommend_title_view">
       <text class="recommend_line">-</text>
       <image class="recommend_pic" src="/pics/other/hot.png"></image>
@@ -93,45 +217,9 @@
               </view>
 
             </view>
-            <view class="jifen">
-              <text>可获积分{{item.jifen}}</text>
-            </view>
           </view>
         </view>
       </block>
     </view>
-  </view>
-
-  <view class="new_pro">
-    <view class="new_title_view">
-      <image class="new_pic" src="/pics/other/new.png"></image>
-      <text class="new_title">新品上架</text>
-    </view>
-    <view class="line"></view>
-    <view class="pro_content">
-      <block wx:for="{{new_pro_info}}">
-        <view class="row_content">
-          <block wx:for="{{item}}" wx:for-item="itemName">
-            <view class="single_pro" bindtap="getProDetail" data-proid="{{itemName.pro_id}}">
-              <image class="new_pro_img" src="{{imgUrl + itemName.thumb}}"></image>
-              <view class="new_pro_name_view">
-                <text class="new_pro_name">{{itemName.p_name}}</text>
-              </view>
-              <view class="new_pro_price">
-                <view class="new_cur_price_view">
-                  <text class="new_cur_price">￥{{itemName.associator_price}}</text>
-                </view>
-                <view class="new_org_price_view">
-                  <text class="new_org_price">￥{{itemName.original_price}}</text>
-                </view>
-              </view>
-              <view class="jifen">
-                <text>可获积分{{itemName.jifen}}</text>
-              </view>
-            </view>
-          </block>
-        </view>
-      </block>
-    </view>
-  </view>
+  </view> -->
 </view>

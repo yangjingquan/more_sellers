@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/first/first",
     "pages/index/index",
     "pages/category/category",
     "pages/shoppingCart/shoppingcart",
@@ -45,8 +46,7 @@
     "pages/jf_confirm_order/confirm_order",
     "pages/jf_pro_detail/detail",
     "pages/jf_products/jf_products",
-    "pages/recommend/recommend",
-    "pages/first/first"
+    "pages/recommend/recommend"
   ],
 
   "window": {
