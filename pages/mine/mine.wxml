@@ -8,7 +8,7 @@
       <view class="in_username_view">
         <text class="username">{{userInfo.nickName}}</text>
         <text class="rec_id">我的推荐人ID：{{rec_id}}</text>
-        <text class="jifen">我的积分：{{jifen}}</text>
+        <!-- <text class="jifen">我的积分：{{jifen}}</text> -->
       </view>
     </view>
   </view>
@@ -72,7 +72,7 @@
     </view>
   </view>
 
-  <view class="income" bindtap="getMyJifen">
+  <!-- <view class="income" bindtap="getMyJifen">
     <view class="income_img_view">
       <image class="income_icon" src="/pics/icons/jifen.png"></image>
     </view>
@@ -82,7 +82,7 @@
     <view class="jiantou_view">
       <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
     </view>
-  </view>
+  </view> -->
 
   <view class="rec_order" bindtap="getRecOrders">
     <view class="rec_order_img_view">
