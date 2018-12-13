@@ -10,35 +10,39 @@ page{
 }
 
 .category_view{
-    width: 100%;
-    height: 60rpx;
-    background-color: #fff;
-    display: flex;
-    flex-direction: row;
+  width: 100%;
+  height: 60rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
 }
 
 .mall_list_view{
-  width: 50%;
+  width: 45%;
   text-align: center;
-  line-height: 60rpx;
+  height: 60rpx;
+  margin: 10rpx;
+  border-radius: 10rpx;
   background-color: #cfd8e2;
 }
 
 .mall_list_text{
   font-size: 30rpx;
-  color: #666666;
+  color: #666;
 }
 
 .catering_list_view{
-  width: 50%;
+  width: 45%;
   text-align: center;
-  line-height: 60rpx;
-  background-color: #c26161;
+  height: 60rpx;
+  margin: 10rpx;
+  border-radius: 10rpx;
+  background-color: rgb(235, 221, 18);
 }
 
 .catering_list_text{
   font-size: 30rpx;
-  color: #666666;
+  color: #666;
 }
 
 .thin_line{
