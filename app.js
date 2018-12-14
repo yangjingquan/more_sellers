@@ -158,11 +158,11 @@ App({
     openid : '',
     rec_id : '',
     //测试
-    imgUrl: "http://cp.dxshuju.com/",
-    requestUrl: "https://xcx001.dxshuju.com/index",
-    extraRequestUrl: "https://xcx001.dxshuju.com/business",
-    acodeUrl: "https://xcx001.dxshuju.com/",
-    payUrl: "https://xcx001.dxshuju.com/index/pay/pay",
-    payGroupUrl: "https://xcx001.dxshuju.com/index/grouppay/pay"
+    imgUrl: "http://cp.58canyin.com:88",
+    requestUrl: "https://wx.58canyin.com/index",
+    extraRequestUrl: "https://wx.58canyin.com/business",
+    acodeUrl: "https://wx.58canyin.com/",
+    payUrl: "https://wx.58canyin.com/index/pay/pay",
+    payGroupUrl: "https://wx.58canyin.com/index/grouppay/pay",
   }
 })

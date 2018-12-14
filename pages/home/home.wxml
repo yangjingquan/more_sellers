@@ -45,15 +45,18 @@
         <text class="bis_title">-  广告位   -</text>
       </view>
     </view>
-    <view class="single_ad_view">
+    <block wx:for="{{tupian_info}}" wx:for-item="item">
+      <view class="single_ad_view">
+          <image class="ad_pic" src='{{item.img_url}}'></image>
+      </view>
+    </block>
+    
+    <!-- <view class="single_ad_view">
         <image class="ad_pic" src='/pics/index_swiper/baby1.jpg'></image>
     </view>
     <view class="single_ad_view">
         <image class="ad_pic" src='/pics/index_swiper/baby1.jpg'></image>
-    </view>
-    <view class="single_ad_view">
-        <image class="ad_pic" src='/pics/index_swiper/baby1.jpg'></image>
-    </view>
+    </view> -->
   </view>
 
   
@@ -95,31 +98,14 @@
     </view>
     <view class="rec_content_view">
       <scroll-view class="rec_content_scroll" scroll-x>
-          <view class="rec_content">
+        <block wx:for="{{tjsj_info}}">
+          <view class="rec_content" bindtap="bisTap" data-bisid="{{item.bis_id}}">
               <view class="rec_pic_view">
-                <image class="rec_pic" src='/pics/index_swiper/baby2.jpg'></image>
+                <image class="rec_pic" src='{{item.thumb}}'></image>
               </view>
+              <text class="rec_sjmc">{{item.bis_name}}</text>
           </view>
-          <view class="rec_content">
-              <view class="rec_pic_view">
-                <image class="rec_pic" src='/pics/index_swiper/baby2.jpg'></image>
-              </view>
-          </view>
-          <view class="rec_content">
-              <view class="rec_pic_view">
-                <image class="rec_pic" src='/pics/index_swiper/baby2.jpg'></image>
-              </view>
-          </view>
-          <view class="rec_content">
-              <view class="rec_pic_view">
-                <image class="rec_pic" src='/pics/index_swiper/baby2.jpg'></image>
-              </view>
-          </view>
-          <view class="rec_content">
-              <view class="rec_pic_view">
-                <image class="rec_pic" src='/pics/index_swiper/baby2.jpg'></image>
-              </view>
-          </view>
+        </block>
       </scroll-view>
     </view>
   </view>

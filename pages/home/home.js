@@ -73,8 +73,8 @@ Page({
       }
     }),
 
-      //获取店铺列表
-      that.getBisList()
+    //获取店铺列表
+    that.getBisList()
 
     //滚动公告列表
     wx.request({
@@ -89,6 +89,38 @@ Page({
         })
       }
     }),
+    //广告位图片获取
+    wx.request({
+      url: app.globalData.extraRequestUrl + '/index/getAdsInfo',
+      data: {},
+      header: {
+        'content-type': ''
+      },
+      success: function (res) {
+        that.setData({
+          tupian_info: res.data.result
+        })
+        wx.navigateTo({
+          url: res.data.result.jump_url
+        })
+      }
+    })
+    // 推荐商家列表
+    wx.request({
+      url: app.globalData.extraRequestUrl + '/index/getRecommendMallList',
+      data: {},
+      header: {
+        'content-type': ''
+      },
+      success: function (res) {
+        that.setData({
+          tjsj_info: res.data.result
+        })
+        wx.navigateTo({
+          url: res.data.result.jump_url
+        })
+      }
+    })
     //推荐商品列表
     wx.request({
       url: app.globalData.requestUrl + '/index/getRecProInfoMut',
