@@ -3,7 +3,6 @@
 var app = getApp()
 Page({
     data: {
-      imgUrl: app.globalData.imgUrl,
       is_mall : 1
     },
     onShow: function (options) {

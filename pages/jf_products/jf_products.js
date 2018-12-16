@@ -1,7 +1,6 @@
 var app = getApp()
 Page({
   data: {
-    imgUrl: app.globalData.imgUrl,
     hidden: true,
     scrollTop: 0
   },

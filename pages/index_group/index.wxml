@@ -28,7 +28,7 @@
         <swiper class="first_swiper" indicator-dots="true" autoplay="true" interval="3000" circular="true">
           <block wx:for="{{recommend_pics}}">
               <swiper-item>
-                  <image src="{{imgUrl + item.image}}" class="first_swiper-item"></image>
+                  <image src="{{item.image}}" class="first_swiper-item"></image>
               </swiper-item>
           </block>
         </swiper>
@@ -41,7 +41,7 @@
             <block wx:for="{{recommend_info}}">
                 <view class="recommend_content" bindtap="getProDetail" data-proid="{{item.pro_id}}"> 
                     <view class="pro_img_view">
-                        <image class="pro_img" src="{{imgUrl + item.thumb}}" mode="widthFix"></image>
+                        <image class="pro_img" src="{{item.thumb}}" mode="widthFix"></image>
                     </view>
                     <view class="content">
                         <text class="pro_name">{{item.p_name}}</text>

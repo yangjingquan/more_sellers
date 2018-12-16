@@ -5,7 +5,6 @@ Page({
     data:({
       selected : false,
       selectedAllStatus : 0,
-      imgUrl: app.globalData.imgUrl,
       bisStatus : true
     }),
     onShow : function(e){

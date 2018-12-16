@@ -158,7 +158,7 @@ App({
     openid : '',
     rec_id : '',
     //测试
-    imgUrl: "http://cp.58canyin.com:88",
+    // imgUrl: "http://cp.58canyin.com:88/",
     requestUrl: "https://wx.58canyin.com/index",
     extraRequestUrl: "https://wx.58canyin.com/business",
     acodeUrl: "https://wx.58canyin.com/",

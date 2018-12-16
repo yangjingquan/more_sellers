@@ -3,7 +3,6 @@
 var app = getApp()
 Page({
   data: {
-    imgUrl: app.globalData.imgUrl,
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
@@ -58,7 +57,9 @@ Page({
     var bis_id = app.globalData.bis_id
 
     that.getOpenid(options)
-
+    //获取附近店铺
+    that.getNearMallInfo()
+    
     //首页banner
     wx.request({
       url: app.globalData.requestUrl + '/bis/getBannersInfo',
@@ -72,9 +73,6 @@ Page({
         })
       }
     }),
-
-    //获取店铺列表
-    that.getBisList()
 
     //滚动公告列表
     wx.request({
@@ -100,30 +98,15 @@ Page({
         that.setData({
           tupian_info: res.data.result
         })
-        wx.navigateTo({
-          url: res.data.result.jump_url
-        })
       }
     })
-    // 推荐商家列表
-    wx.request({
-      url: app.globalData.extraRequestUrl + '/index/getRecommendMallList',
-      data: {},
-      header: {
-        'content-type': ''
-      },
-      success: function (res) {
-        that.setData({
-          tjsj_info: res.data.result
-        })
-        wx.navigateTo({
-          url: res.data.result.jump_url
-        })
-      }
-    })
+    // 推荐推荐商家列表
+    that.getRecommendMallList()
+    //获取推荐餐饮店铺列表
+    that.getRecommendCatMallList()
     //推荐商品列表
     wx.request({
-      url: app.globalData.requestUrl + '/index/getRecProInfoMut',
+      url: app.globalData.extraRequestUrl + '/index/getRecProInfo',
       data: {},
       header: {
         'content-type': ''
@@ -133,23 +116,8 @@ Page({
           recommend_info: res.data.result
         })
       }
-    }),
-    //新品列表
-    wx.request({
-      url: app.globalData.extraRequestUrl + '/index/getNewProInfoMut',
-        data: {},
-        header: {
-          'content-type': ''
-        },
-        success: function (res) {
-          console.log(res.data.result)
-          that.setData({
-            new_pro_info: res.data.result
-          })
-        }
-      })
-    },
-
+    })
+  },
   //判断是否被授权
   onReady: function () {
      wx: wx.getSetting({
@@ -163,6 +131,39 @@ Page({
       }
     })
     
+  },
+  //获取推荐商家
+  getRecommendMallList : function(){
+    var that = this
+    wx.request({
+      url: app.globalData.extraRequestUrl + '/index/getRecommendMallList',
+      data: {},
+      header: {
+        'content-type': ''
+      },
+      success: function (res) {
+        that.setData({
+          tjsj_info: res.data.result
+        })
+      }
+    })
+  },
+  //获取推荐餐饮店铺
+  getRecommendCatMallList: function () {
+    var that = this
+    wx.request({
+      url: app.globalData.extraRequestUrl + '/index/getRecommendCatList',
+      data: {},
+      header: {
+        'content-type': ''
+      },
+      success: function (res) {
+        console.log(res.data.result)
+        that.setData({
+          cat_mall_info: res.data.result
+        })
+      }
+    })
   },
   //获取详情
   getProDetail: function (event) {
@@ -203,23 +204,6 @@ Page({
     })
 
   },
-  //获取店铺列表
-  getBisList: function () {
-    var that = this
-    wx.request({
-      url: app.globalData.requestUrl + '/bis/getBisListInHome',
-      data: {},
-      header: {
-        'content-type': ''
-      },
-      method: 'post',
-      success: function (res) {
-        that.setData({
-          bis_info: res.data.result
-        });
-      }
-    })
-  },
   //下拉刷新
   onPullDownRefresh: function () {
     var that = this
@@ -251,23 +235,6 @@ Page({
         success: function (res) {
           that.setData({
             recommend_info: res.data.result
-          })
-        },
-        complete: function () {
-          wx.hideNavigationBarLoading() //完成停止加载
-          wx.stopPullDownRefresh() //停止下拉刷新
-        }
-      }),
-      //新品列表
-      wx.request({
-        url: app.globalData.requestUrl + '/index/getNewProInfoMut',
-        data: {},
-        header: {
-          'content-type': ''
-        },
-        success: function (res) {
-          that.setData({
-            new_pro_info: res.data.result
           })
         },
         complete: function () {
@@ -406,6 +373,32 @@ Page({
             url: '/pages/index/index',
           })
         }
+      }
+    })
+  },
+  //获取附近店铺
+  getNearMallInfo : function(){
+    var that = this
+    wx.getLocation({
+      type: 'gcj02',
+      success(res) {
+        var latitude = res.latitude.toFixed(6)
+        var longitude = res.longitude.toFixed(6)
+        var location = longitude + ',' + latitude
+        wx.request({
+          url: app.globalData.extraRequestUrl + '/index/getNearMallInfo',
+          data: { location: location },
+          header: {
+            'content-type': ''
+          },
+          method: 'post',
+          success: function (res) {
+            that.setData({
+              bis_info: res.data.result
+            });
+          }
+        })
+
       }
     })
   }

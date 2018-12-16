@@ -6,7 +6,6 @@ Page({
       navLeftItems: [],
       navRightItems: [],
       curIndex: 0,
-      imgUrl: app.globalData.imgUrl,
       hidden : true,
       pos_id : 0,
       scrollTop : 0

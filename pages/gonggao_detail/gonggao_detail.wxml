@@ -10,8 +10,8 @@
     <view class="detail">
       <view class="detail_txt">{{pro_detail_info.content}}</view>
       <view class="detail_img">
-        <image src="{{imgUrl + pro_detail_info.img1}}" class="detail_img1" />
-        <image src="{{imgUrl + pro_detail_info.img2}}" class="detail_img1" />
+        <image src="{{pro_detail_info.img1}}" class="detail_img1" />
+        <image src="{{pro_detail_info.img2}}" class="detail_img1" />
       </view>
     </view>
 

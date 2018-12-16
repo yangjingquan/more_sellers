@@ -3,7 +3,6 @@
 var app = getApp()
 Page({
     data: {
-      imgUrl: app.globalData.imgUrl
     },
     onLoad: function (options) {
       var that = this

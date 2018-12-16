@@ -28,7 +28,7 @@
             <view class="pro_view">
                 <block wx:for="{{item.pro_info}}" wx:for-item="itemPro">
                     <view class="single_img_view" bindtap="proTap" data-proid="{{itemPro.pro_id}}">
-                        <image class="single_img" src="{{imgUrl + itemPro.thumb}}"></image>
+                        <image class="single_img" src="{{itemPro.thumb}}"></image>
                     </view>
                 </block>
             </view>    

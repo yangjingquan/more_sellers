@@ -2,7 +2,7 @@
 <view class="share_container">
     <view class="pro_info_view">
         <view class="image_view">
-            <image class="pro_image" src="{{imgUrl + order_res.thumb}}"></image>
+            <image class="pro_image" src="{{order_res.thumb}}"></image>
         </view>
         <view class="nameAndPrice_view">
             <view class="pro_name_view">

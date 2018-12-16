@@ -20,7 +20,7 @@
     <view class="strong_line"></view>
     <view class="pro_info">
         <view class="img_view">
-            <image class="img" src="{{imgUrl + pro_info.thumb}}"></image>
+            <image class="img" src="{{pro_info.thumb}}"></image>
         </view>
         <view class="nameAndPrice">
             <view class="pro_name_view">

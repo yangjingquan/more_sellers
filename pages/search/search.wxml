@@ -23,7 +23,7 @@
         <block wx:for="{{pro_info}}">
             <view class="pro_content" bindtap="getProDetail" data-proid="{{item.pro_id}}"> 
                 <view class="pro_img_view">
-                    <image class="pro_img" src="{{imgUrl + item.thumb}}" ></image>
+                    <image class="pro_img" src="{{item.thumb}}" ></image>
                 </view>
                 <view class="content">
                     <text class="pro_name">{{item.p_name}}</text>

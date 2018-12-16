@@ -3,7 +3,7 @@
         <view class="allcontet">  
             <view class="picAndTitle">
                 <view class="pro_pic_view">
-                    <image src='{{imgUrl + pro_config_info.thumb}}' class="pro_pic"></image>
+                    <image src='{{pro_config_info.thumb}}' class="pro_pic"></image>
                 </view>
                 <view class="pronameAndPrice_view">
                     <view class="proname_view">
@@ -59,7 +59,7 @@
     <swiper class="pro_swiper_img" indicator-dots="true" autoplay="true" interval="3000" circular="true"> 
         <block wx:for="{{pro_detail_info.images}}">
             <swiper-item>
-                <image src="{{ imgUrl + item}}" class="first_swiper-item"></image>
+                <image src="{{item}}" class="first_swiper-item"></image>
             </swiper-item>
         </block>
     </swiper>
@@ -100,7 +100,7 @@
     <view class="pro_img_view"> 
         <block wx:for="{{pro_detail_info.des_images}}"> 
               <view class="single_img_view" style="width:{{imageSizeInfo[index].imagewidth}}px; height:{{imageSizeInfo[index].imageheight}}px">
-                  <image class="pro_img" style="width:{{imageSizeInfo[index].imagewidth}}px; height:{{imageSizeInfo[index].imageheight}}px" bindload="imageLoad" data-index="{{index}}" src="{{imgUrl + item}}" ></image>
+                  <image class="pro_img" style="width:{{imageSizeInfo[index].imagewidth}}px; height:{{imageSizeInfo[index].imageheight}}px" bindload="imageLoad" data-index="{{index}}" src="{{item}}" ></image>
               </view>
          </block> 
     </view>

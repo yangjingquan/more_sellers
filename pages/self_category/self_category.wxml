@@ -41,7 +41,7 @@
             <view class="products">
                 <view class="one_pro" bindtap="getProDetail" data-proid='{{item.pro_id}}'>
                     <view class="pro_image_view">
-                        <image class="pro_image" src="{{imgUrl + item.thumb}}"></image>
+                        <image class="pro_image" src="{{item.thumb}}"></image>
                     </view>
                     <view class="nameAndPrice">
                         <view class="pro_name_view">

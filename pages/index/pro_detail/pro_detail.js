@@ -7,7 +7,6 @@ Page({
       showModalStatus: false,
       windowHeight: '',
       con_b_name : '',
-      imgUrl: app.globalData.imgUrl,
       from : 'cart',
       imageSizeInfo : {}
     }, 

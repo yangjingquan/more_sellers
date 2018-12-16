@@ -21,7 +21,7 @@
     <block wx:for="{{cart_info}}" wx:for-index="cartIndex">
         <view class="bis_title_view">
             <view class="bis_img_view">
-                <image class="bis_img" src="{{imgUrl + item.bis_thumb}}"></image>
+                <image class="bis_img" src="{{item.bis_thumb}}"></image>
             </view>
             <view class="bis_name_view">
                 <text class="bis_name">{{item.bis_name}}</text>
@@ -31,7 +31,7 @@
         <block wx:for="{{item.pro_info}}" wx:for-item="proItem">
             <view class="pro_info">
                 <view class="img_view">
-                    <image class="img" src="{{imgUrl + proItem.thumb}}"></image>
+                    <image class="img" src="{{proItem.thumb}}"></image>
                 </view>
                 <view class="nameAndPrice">
                     <view class="pro_name_view">

@@ -3,7 +3,7 @@
       <block wx:for="{{recommend_info}}">
           <view class="recommend_content" bindtap="getProDetail" data-proid="{{item.pro_id}}"> 
               <view class="pro_img_view">
-                  <image class="pro_img" src="{{imgUrl + item.thumb}}" mode="widthFix"></image>
+                  <image class="pro_img" src="{{item.thumb}}" mode="widthFix"></image>
               </view>
               <view class="content">
                   <text class="pro_name">{{item.p_name}}</text>

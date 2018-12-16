@@ -4,7 +4,6 @@ Page({
   data: {
       status : 1,
       openid : '',
-      imgUrl: app.globalData.imgUrl
   },
 
   onLoad: function (options) {

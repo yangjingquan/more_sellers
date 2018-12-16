@@ -7,7 +7,7 @@
                  <icon wx:else type="no_circle" size="15" class="checkbox3" catchtap="bindBisbox" data-bisid="{{item.bis_id}}" data-bisstatus="{{item.bis_status}}"/> 
             </view>
             <view class="bis_img_view">
-                <image class="bis_img" src="{{imgUrl + item.bis_thumb}}"></image>
+                <image class="bis_img" src="{{item.bis_thumb}}"></image>
             </view>
             <view class="bis_name_view">
                 <text class="bis_name">{{item.bis_name}}</text>
@@ -21,7 +21,7 @@
                     <icon wx:else type="no_circle" size="15" catchtap="bindCheckbox" data-cartid="{{proItem.cart_id}}" data-status="{{proItem.selected}}" class="checkbox1"/>
                 </view>
                 <view class="pro_image_view">
-                    <image class="pro_image" src="{{imgUrl + proItem.thumb}}"></image>
+                    <image class="pro_image" src="{{proItem.thumb}}"></image>
                 </view>
                 <view class="nameAndPrice">
                     <view class="pro_name_view">
