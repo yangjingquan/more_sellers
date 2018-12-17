@@ -157,10 +157,9 @@ App({
     secret: "c3afda85c43c5314d7a38cf0a5464c62ee4ec501",
     openid : '',
     rec_id : '',
-    //测试
-    // imgUrl: "http://cp.58canyin.com:88/",
     requestUrl: "https://wx.58canyin.com/index",
     extraRequestUrl: "https://wx.58canyin.com/business",
+    cateringRequestUrl: "https://wx.58canyin.com/catering",
     acodeUrl: "https://wx.58canyin.com/",
     payUrl: "https://wx.58canyin.com/index/pay/pay",
     payGroupUrl: "https://wx.58canyin.com/index/grouppay/pay",
