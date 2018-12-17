@@ -1,0 +1,75 @@
+<view class="reserve_container">
+    <form bindsubmit="formSubmit">
+        <view class="date_view">
+            <view class="date_picker_label_view">
+                <label class="date_label">选择日期：</label>
+            </view>
+            <view class="date_picker_view">
+                <picker mode="date" bindchange="bindDateChange" value="{{new_date}}" name="date">
+                    <view class="picker">{{new_date}}</view>
+                </picker>
+            </view>
+            <view class="jiantou_view">
+                <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="time_view">
+            <view class="time_picker_label_view">
+                <label class="time_label">选择日期：</label>
+            </view>
+            <view class="time_picker_view">
+                <picker mode="time" bindchange="bindTimeChange" value="{{new_time}}" name="time">
+                    <view class="picker">{{new_time}}</view>
+                </picker>
+            </view>
+            <view class="jiantou_view">
+                <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="table_view">
+            <view class="table_picker_label_view">
+                <label class="table_label">选择桌位类型：</label>
+            </view>
+            <view class="table_picker_view">
+                <picker mode="selector" bindchange="bindTableChange" value="{{index}}" name="table" range="{{table_type}}">
+                    <view class="picker">{{table_type[index]}}-{{table_consume[index]}}</view>
+                </picker>
+            </view>
+            <view class="jiantou_view">
+                <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+            </view>
+        </view>
+        <view class="strong_line"></view>
+        <view class="contact_view">
+            <label class="contact_label">联系人：</label>
+            <input name="contact" class="contact_input" placeholder='请输入联系人称呼' placeholder-class="phcolor"></input>
+        </view>
+        <view class="line"></view>
+        <view class="count_view">
+            <label class="count_label">就餐人数：</label>
+            <input name="count" class="count_input" placeholder='请输入就餐人数' placeholder-class="phcolor"></input>
+        </view>
+        <view class="line"></view>
+        <view class="mobile_view">
+            <label class="mobile_label">联系电话：</label>
+            <input name="mobile" class="mobile_input" placeholder='请输入电话号码' placeholder-class="phcolor"></input>
+        </view>
+        <view class="strong_line"></view>
+        <view class="remark_view">
+        <view class="remark_label_view">
+            <label class="remark_label">备注：</label>
+        </view>
+        <view class="remark_textarea_view">
+            <textarea class="remark_textarea" placeholder='请输入备注信息' placeholder-class="phcolor"></textarea>
+        </view> 
+          
+        </view>
+        <view class="buttons">
+            <view class="reserve_view">
+                <button class="reserve" formType="submit">立即预约</button>
+            </view>
+        </view>
+    </form>
+</view>

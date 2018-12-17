@@ -1,0 +1,180 @@
+<!--index.wxml-->
+<!-- <import src="head_template/head_template.wxml"/> -->
+<view class="index_container">
+    <view class="head_view">
+        <view class="bis_view">
+            <view class="img_view">
+                <image src="{{imgUrl + img_res.logo_image}}" class="img"></image>
+            </view>
+            <view class="bis_content_view">
+                <view class="bis_name_view">
+                    <text class="bis_name">{{bis_res.bis_name}}</text>
+                </view>
+                <view class="scope_view">
+                    <text class="scope">配送范围：{{bis_res.scope}}公里 | ￥{{bis_res.min_price}}元起送</text>
+                </view>
+                <view class="gonggao_view">
+                    <text class="gonggao">公告：本店小程序上线，欢迎体验！</text>
+                </view>
+            </view>
+        </view>
+        <view class="act_view">
+            <view class="activity_view">
+                <swiper class="s_swiper" autoplay="true" interval="3000" circular="true" vertical="true">
+                    <block wx:for="{{act_res}}">
+                      <swiper-item class="ss_swiper">
+                          <text class="ss_text">{{item.activity_name}}</text>
+                      </swiper-item>
+                    </block>
+              </swiper>
+            </view>
+            <view class="act_count_view">
+                <text class="act_count">{{act_count}}个活动</text>
+            </view>
+        </view>
+    </view>
+    <view class="index">
+        <swiper class="first_swiper" indicator-dots="true" autoplay="true" interval="3000" circular="true">
+            <block wx:for="{{banner_res}}">
+                <swiper-item>
+                    <image src="{{imgUrl + item.image}}" class="first_swiper-item"></image>
+                </swiper-item>
+            </block>
+          </swiper>
+    </view>
+    <view class="touch_bar_view">
+       <view class="pre_view" bindtap="reserve">
+            <view class="pre_img_view">
+                <image class="pre_img" src="/pics/icons/yuding.png"></image>
+            </view>
+            <view class="pre_title_view">
+                <text class="pre_title">预定</text>
+            </view>
+       </view>
+       <view class="dc_view" bindtap="diancan">
+            <view class="dc_img_view">
+                <image class="dc_img" src="/pics/icons/diancan.png"></image>
+            </view>
+            <view class="dc_title_view">
+                <text class="dc_title">点餐</text>
+            </view>
+       </view>
+       <view class="wm_view" bindtap="waimai">
+            <view class="wm_img_view">
+                <image class="wm_img" src="/pics/icons/waimai.png"></image>
+            </view>
+            <view class="wm_title_view">
+                <text class="wm_title">外卖</text>
+            </view>
+       </view>
+       <view class="yhq_view">
+            <view class="yhq_img_view">
+                <image class="yhq_img" src="/pics/icons/youhuiquan.png"></image>
+            </view>
+            <view class="yhq_title_view">
+                <text class="yhq_title">优惠券</text>
+            </view>
+       </view>
+       <view class="sy_view" bindtap="shouyin">
+            <view class="sy_img_view">
+                <image class="sy_img" src="/pics/icons/shouyin.png"></image>
+            </view>
+            <view class="sy_title_view">
+                <text class="sy_title">收银</text>
+            </view>
+       </view>
+    </view>
+    <view class="strong_line"></view>
+    <view class="about_bis_view">
+        <view class="bis_info_view">
+            <text class="bis_info">商家信息</text>
+        </view>
+        <view class="line"></view>
+        <view class="b_time_view">
+            <view class="b_time_title_view">
+                <text class="b_time_title">营业时间</text>
+            </view>
+            <view class="b_time_content_view">
+                <text class="b_time_content">{{bis_res.business_time}}</text>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="tel_view" bindtap="callTel" data-tel="{{bis_res.link_tel}}">
+            <view class="tel_title_view">
+                <text class="tel_title">商家电话</text>
+            </view>
+            <view class="tel_content_view">
+                <text class="tel_content">{{bis_res.link_tel}}</text>
+            </view>
+            <view class="jiantou_view">
+                <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="address_view">
+            <view class="address_title_view">
+                <text class="address_title">商家地址</text>
+            </view>
+            <view class="address_content_view">
+                <text class="address_content">{{bis_res.address}}</text>
+            </view>
+            <view class="jiantou_view">
+                <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="env_view">
+            <view class="env_title_view">
+                <text class="env_title">商家环境</text>
+            </view>
+            <view class="env_jiantou_view">
+                <image class="env_jiantou" src="/pics/icons/jiantou_grey.png"></image>
+            </view>
+        </view>
+        <view class="strong_line"></view>
+        <view class="ps_info_view">
+            <view class="ps_title_view">
+                <text class="ps_title">配送信息</text>
+            </view>
+            <view class="ps_content_view">
+                <view class="ps_content_title_view">
+                      <text class="ps_content_title">商家配送</text>
+                </view>
+                <view class="ps_content_con_view">
+                    <view class="ps_content_con1_view">
+                        <text class="ps_content_con1">准时必达，专业配送，提供高品质送餐服务</text>
+                    </view>
+                    <view class="ps_content_con2_view">
+                        <text class="ps_content_con2">配送费￥1</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="strong_line"></view>
+        <view class="activity_list_view">
+            <block wx:for="{{act_res}}">
+                <view class="activity_single_view">
+                    <view class="activity_single_img_view">
+                        <image wx:if="{{item.type == 1}}" class="activity_single_img" src="/pics/icons/sub.png" mode="widthFix"></image>
+                        <image wx:else class="activity_single_img" src="/pics/icons/first.png" mode="widthFix"></image>
+                    </view>
+                    <view class="activity_single_text_view">
+                        <text class="activity_single_text">{{item.activity_name}}</text>
+                    </view>
+                </view>
+                <view class="thin_line"></view>
+            </block>
+        </view>
+        <view class="wxpay_view">
+            <view class="wxpay_img_view">
+                <image class="wxpay_img" src="/pics/icons/wxpay.png" mode="widthFix"></image>
+            </view>
+            <view class="wxpay_text_view">
+                <text class="wxpay_text">该商家支持微信支付</text>
+            </view>
+        </view>
+        <view class="bottom_logo_view">
+            <image class="bottom_logo" src="/pics/icons/bottom_logo.png" mode="widthFix"></image>
+        </view>
+    </view>
+</view>

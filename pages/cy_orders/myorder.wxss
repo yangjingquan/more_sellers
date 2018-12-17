@@ -1,0 +1,58 @@
+/* myorder.wxss */
+ @import "order_template/order_template.wxss"; 
+page{
+  background-color: #f9f9f9;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.barTital{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80rpx;
+    border-bottom: 2rpx solid #f1f1f1;
+}
+
+.diancan_view,.waimai_view,.reserve_view{
+    width: 33.33%;
+    height: 80rpx;
+    text-align: center;
+}
+
+.diancan_text,.waimai_text,.reserve_text{
+    font-size: 28rpx;
+    line-height: 80rpx;
+    color: #787878;
+}
+
+.order_content{
+    width: 100%;
+    height: 100%;
+}
+
+.active{
+    background-color:#fe4a65;
+    height:4rpx;
+    width:35%;
+    margin-left:32%;
+}
+
+.selected{
+  color:#fe4a65;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fafafa;
+}
+
+
+
+
+

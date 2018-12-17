@@ -1,0 +1,141 @@
+<view class="detail_container" >
+    <view animation="{{animationData}}" class="container-column buydes-dialog-container" wx:if="{{showModalStatus}}">   
+        <view class="allcontet">  
+            <view class="picAndTitle">
+                <view class="pro_pic_view">
+                    <image src='{{imgUrl + pro_config_info.thumb}}' class="pro_pic"></image>
+                </view>
+                <view class="pronameAndPrice_view">
+                    <view class="proname_view">
+                        <text class="proname">{{pro_config_info.p_name}}</text>
+                    </view>
+                    <view class="brand_view">
+                        <text class="brandname">{{pro_config_info.brand}}</text>
+                    </view>
+                    <view class="prices_view">
+                        <text class="orgprice">￥{{pro_config_info.associator_price}}</text>
+                        <text class="curprice">￥{{pro_config_info.original_price}}</text>
+                    </view>
+                </view>
+                <view class="hideModel_view">
+                    <image class="hideModel_img" src="/pics/icons/hide.png" bindtap="hideModal"></image>
+                </view>
+            </view>
+            <view class="guige1_view">
+                <text class="guige1_title">{{pro_config_info.config1_info.content1_name}}</text>
+                <block wx:for="{{pro_config_info.config1_info.con_content1}}">
+                    <view class="guige1_content_view">
+                        <block wx:for="{{item}}" wx:for-item="con_item">
+                            <view class="guige1_text_view {{conname == con_item ? 'active' : ''}}" bindtap="select_config1_tap" data-conName="{{con_item}}" data-proid="{{pro_detail_info.pro_id}}">
+                                <text class="guige1_text" data-conName="{{con_item}}" data-proid="{{pro_detail_info.pro_id}}" catchtap="select_config1_tap">{{con_item}}</text>
+                            </view>
+                        </block>
+                    </view>
+                </block>
+            </view>
+            <view class="guige2_view" wx:if="{{show_config2_info}}">
+                <text class="guige2_title">{{config2_info.content_name}}</text>
+                <block wx:for="{{config2_info.con_content}}">
+                    <view class="guige2_content_view">
+                        <block wx:for="{{item}}" wx:for-item="con_item">
+                            <view class="guige2_text_view {{con_b_name == con_item.con_content ? 'active' : ''}}" bindtap="select_config2_tap" data-con_b_name="{{con_item.con_content}}" data-conid="{{con_item.con_id}}">
+                                <text class="guige2_text" data-con_b_name="{{con_item.con_content}}" data-conid="{{con_item.con_id}}" catchtap="select_config2_tap" >{{con_item.con_content}}</text>
+                            </view>
+                        </block>
+                    </view>
+                </block>
+            </view> 
+            <view class="count_select">
+                <view class="count_title_view" >
+                    <text class="count_title">数量</text>
+                </view>
+                <view class="count_view">
+                    <view class="sub_view {{select_count == 1 ? 'disable' : ''}}" data-selectCount="{{select_count}}" bindtap="subtraction">
+                        <text class="sub" data-selectCount="{{select_count}}" catchtap="subtraction">-</text>
+                    </view>
+                    <view class="count_view1">
+                        <text class="count" >{{select_count}}</text>
+                    </view>
+                    <view class="plus_view" bindtap="plus" data-selectCount="{{select_count}}">
+                        <text class="plus" data-selectCount="{{select_count}}" catchtap="plus">+</text>
+                    </view>
+                </view>
+            </view>
+            <view class="add_cart_button_view">
+              <view class="confirm_button_view" bindtap="xiadan" data-selectconid="{{selectconid}}" data-finalcount="{{select_count}}">
+                  <text class="add_cart_confirm" data-selectconid="{{selectconid}}"  data-finalcount="{{select_count}}" catchtap="xiadan">确认</text>
+              </view>
+          </view>
+        </view> 
+    </view>
+    <swiper class="pro_swiper_img" indicator-dots="true" autoplay="true" interval="3000" circular="true"> 
+        <block wx:for="{{pro_detail_info.images}}">
+            <swiper-item>
+                <image src="{{ imgUrl + item}}" class="first_swiper-item"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="pro_name_view">
+        <text class="pro_name">{{pro_detail_info.p_name}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="about_price">
+        <text class="cur_price">￥{{pro_detail_info.associator_price}}</text>
+        <text class="org_price">￥{{pro_detail_info.original_price}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="grand">
+        <view class="grand_title_view">
+            <text class="grand_title">品牌</text>
+        </view>
+        <view class="grand_name_view">
+            <text class="grand_name">{{pro_detail_info.brand}}</text>
+        </view>
+    </view>
+    <view  class="guige">
+        <block wx:for="{{pro_detail_info.config_info}}">
+            <view class="guige_title_view">
+                <text class="guige_title">{{item.content1_name}}</text>
+            </view>
+            <view class="guige_name_view">
+                <text class="guige_content">{{item.con_content1}}</text>
+            </view>
+        </block>
+    </view>
+    <view class="line"></view>
+    <view class="pro_des">
+        <text class="des_title">商品详情</text>
+        <view class="des_content_view">
+            <text class="des_content">{{pro_detail_info.wx_introduce}}</text>
+        </view>
+    </view>
+    <view class="pro_img_view">
+        <block wx:for="{{pro_detail_info.des_images}}">
+            <image class="pro_img" src="{{imgUrl + item}}" mode="widthFix"></image>
+        </block>
+    </view>
+    <view class="buttons">
+        <view class="store_view" bindtap="goStore">
+            <view class="store_img_view">
+                <image class="store_img" src="/pics/icons/index_selected.png"></image>
+            </view>
+            <view class="store_text_view">
+                <text class="store" catchtap="goStore">商城</text>
+            </view>  
+        </view>
+        <view class="shopping_cart_view" bindtap="goShoppingCart">
+            <view class="shopping_cart_img_view">
+                <image class="shopping_cart_img" src="/pics/icons/cart_selected.png"></image>
+            </view>
+            <view class="shopping_cart_text_view">
+                <text class="shopping_cart" catchtap="goShoppingCart">购物车</text>
+            </view> 
+        </view>
+        <view class="addCart_view" data-proid="{{pro_detail_info.pro_id}}" data-from="cart" bindtap="selectGuige" >
+            <text class="addCart" data-proid="{{pro_detail_info.pro_id}}" data-from="cart"  catchtap="selectGuige">加入购物车</text>
+        </view>
+        <view class="buy_view" data-proid="{{pro_detail_info.pro_id}}" data-from="buy"  bindtap="buyNow">
+            <text class="buy" data-proid="{{pro_detail_info.pro_id}}" data-from="buy" catchtap="buyNow">立即购买</text>
+        </view>
+    </view>    
+</view>

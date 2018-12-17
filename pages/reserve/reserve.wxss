@@ -1,0 +1,145 @@
+.reserve_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.date_view,.time_view,.table_view,.contact_view,.count_view,.mobile_view,.area_view{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 3%; 
+    height: 80rpx;
+}
+
+.date_picker_label_view,.time_picker_label_view{
+    width: 25%;
+    height: 100%;
+    margin-left: 2%;
+}
+
+.table_picker_label_view{
+    width: 33%;
+    height: 100%;
+    margin-left: 2%;
+}
+
+.date_label,.time_label,.table_label,.contact_label,.count_label,.mobile_label{
+    font-size: 32rpx;
+    color: #B9B9B9;
+    margin-left: 3%;
+    line-height: 80rpx;
+}
+
+.date_picker_view,.time_picker_view{
+    width: 63%;
+    height: 100%;
+    text-align: right;
+}
+
+.table_picker_view{
+    width: 55%;
+    height: 100%;
+    text-align: right;
+}
+
+.jiantou_view{
+    width:10%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jiantou{
+    width:50%;
+    height:40%;
+}
+
+.strong_line{
+    background-color: #efefef;
+    height: 15rpx;
+    width: 100%;
+}
+.receiver_input,.contact_input,.count_input,.mobile_input{
+    width: 560rpx;
+    font-size: 32rpx;
+    color: #000000;
+    line-height: 80rpx;
+    margin-top: 2%; 
+}
+
+.phcolor{
+  color : #898989;
+  font-size: 28rpx;
+}
+
+.picker{
+    font-size: 32rpx;
+    color: #000000;
+    line-height: 80rpx;
+}
+
+.line{
+    margin-top: 10rpx;
+    background-color: #e8e8e8;
+    height: 3rpx;
+    width: 100%;
+}
+
+.remark_view{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3%; 
+    height: 200rpx;
+}
+
+.remark_label_view{
+    width: 25%;
+    height: 100%;
+    margin-left: 2%;
+}
+.remark_label{
+    font-size: 32rpx;
+    color: #B9B9B9;
+    margin-left: 3%; 
+}
+
+.remark_textarea_view{
+    width: 100%;
+    height: 70%;
+}
+
+.remark_textarea{
+    width: 94%;
+    height: 100%;
+    margin-left: 3%;
+    border: 1px solid #B9B9B9;
+    font-size: 32rpx;
+    color: #000;
+}
+
+button{
+    background-color:#58A6F6;
+}
+
+.buttons{
+    height: 80rpx;
+    margin-top: 10%;
+}
+
+.reserve_view{
+    bottom: 0;
+    height: 80rpx;
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.reserve{
+    font-size: 16px;
+    line-height: 80rpx;
+    color: #fff;
+}

@@ -1,0 +1,84 @@
+<view class="c_order_container">
+    <view class="orderStatusAndEvaluate">
+        <view class="orderStatus_view">
+            <text class="orderStatus">{{order_info.status_text}}</text>
+        </view>
+        <view wx:if="{{order_info.order_status == 4}}" class="evaluate_view">
+            <view class="evaluate">
+                <text class="evaluate_text">评价</text>
+            </view>
+        </view>
+    </view>
+    <view class="strong_line"></view>
+    <block wx:for="{{order_info.pro_info}}">
+        <view class="pro_info">
+            <view class="img_view">
+                <image class="img" src="{{imgUrl + item.image}}"></image>
+            </view>
+            <view class="nameAndPrice">
+                <view class="pro_name_view">
+                    <text class="pro_name">{{item.p_name}}</text>
+                </view>
+                
+                <view class="price_view">
+                    <view class="unit_price_view">
+                        <text class="price">￥{{item.original_price}}</text>
+                    </view>
+                    <view class="count_view">
+                        <text class="count">x{{item.count}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="pro_thin_line"></view>
+    </block>
+    <view class="total_amount_view">
+        <view class="paid_view">
+            <text class="paid_title">{{order_info.order_status == 1 ? '待支付:' : '实付:'}}  <text class="paid">￥{{order_info.total_amount}} </text></text>
+        </view>
+    </view>
+    <view class="no_top_thin_line"></view>
+    <view class="table_view" catchtap="choose_table">
+        <view class="table_picker_label_view">
+            <label class="table_label">配送地址：</label>
+        </view>
+        <view class="nameAndMobile_view">
+          <view class="nameAndMobile">
+              <view class="name_view">
+                  <text class="name">{{order_info.rec_name}}</text>
+              </view>
+              <view class="mobile_view">
+                  <text class="mobile">{{order_info.mobile}}</text>
+              </view>
+          </view>
+          <view class="address_view1">
+              <text class="address">{{order_info.address}}</text>
+          </view>
+        </view>
+    </view> 
+    <view class="pro_thin_line"></view>
+    <view class="order_time_view">
+        <view class="order_time_title_view">
+            <text class="order_time_title">订单时间：</text>
+        </view>
+        <view class="order_time_content_view">
+            <text class="order_time_content">{{order_info.create_time}}</text>
+        </view>
+    </view>
+    <view class="pro_thin_line"></view>
+    <view class="order_time_view">
+        <view class="order_time_title_view">
+            <text class="order_time_title">订单号码：</text>
+        </view>
+        <view class="order_time_content_view">
+            <text class="order_time_content">{{order_info.order_no}}</text>
+        </view>
+    </view>
+    <view class="pro_thin_line"></view>
+    <view class="remark_view">
+        <label class="remark_label">个人备注：</label>
+        <input class="remark_input" disabled='disabled' value="{{order_info.remark}}" type='text'>{{order_info.remark}}</input>
+    </view> 
+    <view class="strong_line"></view>
+    
+</view>

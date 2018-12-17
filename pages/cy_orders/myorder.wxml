@@ -1,0 +1,30 @@
+<!--myorder.wxml-->
+<import src="order_template/order_template.wxml"/>
+<view class="container">
+    <view class="barTital">
+        <view class="diancan_view" bindtap="checkOrderType" data-statusid="1">
+            <text class="diancan_text {{status == 1 ? 'selected' : ''}}">点餐</text>
+            <view class="{{status == 1 ? 'active' : ''}}"></view>
+        </view>
+        <view class="waimai_view" bindtap="checkOrderType" data-statusid="2">
+            <text class="waimai_text {{status == 2 ? 'selected' : ''}}">外卖</text>
+            <view class="{{status == 2 ? 'active' : ''}}"></view>
+        </view>
+        <view class="reserve_view" bindtap="checkOrderType" data-statusid="3">
+            <text class="reserve_text {{status == 3 ? 'selected' : ''}}">预定</text>
+             <view class="{{status == 3 ? 'active' : ''}}"></view> 
+        </view>     
+    </view>
+    
+    <view class="content">
+        <block wx:if="{{status == 1}}" wx:for="{{order_info}}">
+            <template is="diancan_order_info" data="{{...item}}" />
+        </block>
+        <block wx:if="{{status == 2}}" wx:for="{{order_info}}">
+            <template is="waimai_order_info" data="{{...item}}" />
+        </block>
+        <block wx:if="{{status == 3}}" wx:for="{{order_info}}">
+            <template is="reserve_order_info" data="{{...item}}" />
+        </block>     
+    </view>
+</view>

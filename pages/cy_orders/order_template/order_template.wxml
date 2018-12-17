@@ -1,0 +1,127 @@
+<!--order_template.wxml-->
+<template name="diancan_order_info">
+    <view class="order_list_view" bindtap="getDcDetail" data-orderid="{{order_id}}">
+        <view class="floor1_view">
+            <view class="bisname_view">
+                <text class="bisname">{{bis_name}} ></text>
+            </view>
+            <view class="orderstatus_view">
+                <text class="orderstatus">{{status_text}}</text>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="floor2_view">
+            <block wx:for="{{pro_info}}" wx:for-item="proItem">
+                <view class="food_view">
+                    <view class="food_name_view">
+                        <text class="food_name">{{proItem.p_name}}</text>
+                    </view>
+                    <view class="food_count_view">
+                        <text class="food_count">x{{proItem.count}}</text>
+                    </view>
+                </view>
+            </block>
+            <view class="amount_view">
+                <view class="shenglue_view">
+                    <text wx:if="{{pro_count > 3}}" class="shenglue">...</text>
+                </view>
+                <view class="paid_view">
+                    <text class="paid_content">共{{pro_count}}件商品</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="strong_line"></view>
+</template>
+
+<template name="waimai_order_info">
+    <view class="order_list_view" bindtap="getWmDetail" data-orderid="{{order_id}}">
+        <view class="floor1_view">
+            <view class="bisname_view">
+                <text class="bisname">{{bis_name}} ></text>
+            </view>
+            <view class="orderstatus_view">
+                <text class="orderstatus">{{status_text}}</text>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="floor2_view">
+            <block wx:for="{{pro_info}}" wx:for-item="proItem">
+                <view class="food_view">
+                    <view class="food_name_view">
+                        <text class="food_name">{{proItem.p_name}}</text>
+                    </view>
+                    <view class="food_count_view">
+                        <text class="food_count">x{{proItem.count}}</text>
+                    </view>
+                </view>
+            </block>
+            <view class="amount_view">
+                <view class="shenglue_view">
+                    <text wx:if="{{pro_count > 3}}"  class="shenglue">...</text>
+                </view>
+                <view class="paid_view">
+                    <text class="paid_content">共{{pro_count}}件商品，{{status == 1 ? '待支付' : '实付'}}<text class="paid_price">￥{{amount}}</text></text>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{status == 4}}" class="long_line"></view>
+        <view wx:if="{{status == 4}}" class="floor3_view">   
+            <view class="evaluate">
+                <text class="evaluate_text">评价</text>
+            </view>
+        </view>
+    </view>
+    <view class="strong_line"></view>
+</template>
+
+<template name="reserve_order_info">
+  <view class="pre_order_info_view">
+        <view class="ordertime_view">
+            <view class="ordertime_title_view">
+                <text class="ordertime_title">下单日期：</text>
+            </view>
+            <view class="ordertime_content_view">
+                <text class="ordertime_content">{{create_time}}</text>
+            </view>
+        </view>
+        <view class="long_line"></view>
+        <view class="reserve_time_view">
+            <view class="reserve_time_title_view">
+                <text class="reserve_time_title">预定日期：</text>
+            </view>
+            <view class="reserve_time_content_view">
+                <text class="reserve_time_content">{{date + ' ' + time}}</text>
+            </view>
+        </view>
+        <view class="long_line"></view>
+        <view class="table_type_view">
+            <view class="table_type_title_view">
+                <text class="table_type_title">桌位类型：</text>
+            </view>
+            <view class="table_type_content_view">
+                <text class="table_type_content">{{type_text}}</text>
+            </view>
+        </view>
+        <view class="long_line"></view>
+        <view class="pre_name_view">
+            <view class="pre_name_title_view">
+                <text class="pre_name_title">预留姓名：</text>
+            </view>
+            <view class="pre_name_content_view">
+                <text class="pre_name_content">{{link_man}}</text>
+            </view>
+        </view>
+        <view class="long_line"></view>
+        <view class="pre_status_view">
+            <view class="prestatus_view {{order_status != 1 ? 'prestatus_view_left' : ''}}">
+                <text class="pre_status">{{status_text}}</text>
+            </view>
+            <view wx:if="{{order_status == 1}}" class="opearate_view" bindtap="canceReserveOrder" data-orderid="{{order_id}}">
+                <text class="opearate_button">取消</text>
+            </view>
+        </view>
+        <view class="strong_line"></view>
+    </view>
+</template>
+

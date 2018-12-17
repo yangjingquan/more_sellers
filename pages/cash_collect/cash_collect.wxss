@@ -1,0 +1,76 @@
+/**cash_collect.wxss**/
+page{  
+    background: #f5f5f5;
+    height:100%;  
+}  
+
+.cash_collect_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.amount_title_view{
+    width: 100%;
+    height: 150rpx;
+    text-align: center;
+}
+
+.amount_title{
+    font-size: 44rpx;
+    line-height: 150rpx;
+    color: #666666;
+}
+
+.amount_view{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 200rpx;
+    
+}
+
+.amount_content_view{
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+}
+
+.amount_content{
+    font-size: 64rpx;
+    border: 2rpx solid #cccccc;
+    height: 120rpx;
+    margin-top: 40rpx;
+    text-align: right;
+    padding-right: 2%;
+}
+
+.phcolor{
+    color : #cccccc;
+    font-size: 64rpx;
+    margin-left: 0%
+}
+
+button{
+    background-color:#51A938;
+}
+
+.buttons{
+    height: 80rpx;
+    margin-top: 10%;
+}
+
+.c_order_button_view{
+    bottom: 0;
+    height: 80rpx;
+    text-align: center;
+    width:90%;
+    margin-left: 5%;
+}
+
+.c_order_button{
+    font-size: 16px;
+    line-height: 80rpx;
+    color: #fff;
+}

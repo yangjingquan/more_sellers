@@ -1,0 +1,55 @@
+<view class="c_order_container">
+    <form bindsubmit="formSubmit">
+    <view class="table_view" catchtap="choose_table">
+        <view class="table_picker_label_view">
+            <label class="table_label">选择桌位：</label>
+        </view>
+        <view class="table_picker_view">
+                <picker mode="selector" bindchange="bindTableChange" value="{{tables[index]}}" name="table" range="{{tables}}">
+                    <view class="picker">{{tables[index]}}</view>
+                </picker>
+        </view>
+        <view class="jiantou_view">
+            <image class="jiantou" src="/pics/icons/jiantou_grey.png"></image>
+        </view>
+    </view> 
+    
+    <view class="strong_line"></view>
+    <block wx:for="{{cart_info}}">
+        <view class="pro_info">
+            <view class="img_view">
+                <image class="img" src="{{imgUrl + item.image}}"></image>
+            </view>
+            <view class="nameAndPrice">
+                <view class="pro_name_view">
+                    <text class="pro_name">{{item.p_name}}</text>
+                </view>
+                
+                <view class="price_view">
+                    <view class="unit_price_view">
+                        <text class="price">￥{{item.original_price}}</text>
+                    </view>
+                    <view class="count_view">
+                        <text class="count">x{{item.selected_count}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="pro_thin_line"></view>
+    </block>
+    <view class="total_amount_view">
+        <text class="total_amount_title">共计: <text class="total_amount">￥{{total_amount}} </text></text>
+    </view>
+    <view class="no_top_thin_line"></view>
+    <view class="remark_view">
+        <label class="remark_label">备注：</label>
+        <input class="remark_input" name="remark" type='text' placeholder='选填，60字以内'></input>
+    </view> 
+    <view class="strong_line"></view>
+    <view class="buttons">
+            <view class="c_order_button_view">
+                <button class="c_order_button" formType="submit">提交订单</button>
+            </view>
+        </view>
+    </form>
+</view>

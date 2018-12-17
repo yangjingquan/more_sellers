@@ -46,7 +46,18 @@
     "pages/jf_confirm_order/confirm_order",
     "pages/jf_pro_detail/detail",
     "pages/jf_products/jf_products",
-    "pages/recommend/recommend"
+    "pages/recommend/recommend",
+    "pages/diancan/diancan",
+    "pages/cy_index/pro_detail/pro_detail",
+    "pages/cy_orders/order_template/order_template",
+    "pages/dc_confirm_order/dc_confirm_order",
+    "pages/wm_confirm_order/wm_confirm_order",
+    "pages/dc_order_detail/dc_order_detail",
+    "pages/wm_order_detail/wm_order_detail",
+    "pages/reserve/reserve",
+    "pages/waimai/waimai",
+    "pages/cash_collect/cash_collect",
+    "pages/cy_orders/myorder"
   ],
 
   "window": {

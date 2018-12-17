@@ -1,0 +1,242 @@
+/* order_template.wxss */
+.order_list_view{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.floor1_view{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100rpx;
+}
+
+.bisname_view{
+    width: 60%;
+    height: 100%;
+    margin-left: 10%;
+}
+
+.bisname{
+    font-size: 36rpx;
+    line-height: 100rpx;
+}
+
+.orderstatus_view{
+    width: 25%;
+    height: 100%;
+    text-align:right;
+    margin-left:2%;
+}
+
+.orderstatus{
+    font-size: 32rpx;
+    line-height: 100rpx;
+    color: #bbbbbb;
+}
+
+.line{
+    background-color: #eeeeee;
+    height: 3rpx;
+    width: 90%;
+    margin-left: 10%;
+}
+
+.long_line{
+    background-color: #eeeeee;
+    height: 3rpx;
+    width: 97%;
+    margin-left: 3%;
+}
+
+.strong_line{
+    background-color: #eeeeee;
+    height: 10rpx;
+    width: 100%;
+}
+
+.floor2_view{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+.food_view{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 60rpx;
+}
+
+.food_name_view{
+    width: 60%;  
+    height: 100%;
+    margin-left: 15%;
+}
+
+.food_name{
+    font-size: 30rpx;
+    line-height: 60rpx;
+    color: #666666;
+}
+
+.food_count_view{
+    width: 10%;  
+    height: 100%;
+    margin-left: 12%;
+    text-align:right;
+}
+
+.food_count{
+    font-size: 30rpx;
+    line-height: 60rpx;
+    color: #737373;
+}
+
+.amount_view{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 60rpx;
+}
+
+.shenglue_view{
+    width:25%;
+    height:100%;
+    margin-left:15%;
+    text-align:left;
+}
+
+.shenglue{
+    font-size: 30rpx;
+    line-height: 60rpx;
+    color: #666666;
+}
+
+.paid_view{
+    width:55%;
+    height:100%;
+    margin-left:2%;
+    text-align: right;
+}
+
+.paid_content{
+    font-size: 30rpx;
+    line-height: 60rpx;
+    color: #737373;
+}
+
+.paid_price{
+    font-size: 34rpx;
+    line-height: 60rpx;
+    color: #000;
+}
+
+.floor3_view{
+    width: 100%;
+    margin-left: 77%;
+    height: 104rpx;
+}
+
+.evaluate{
+  width: 20%;
+  height: 70rpx;
+  text-align: center;
+  border: 2rpx solid #FDC94F;
+  border-radius: 5rpx;
+  background-color: #FDC94F;
+  margin-top: 15rpx;
+}
+
+.evaluate_text{
+    font-size: 32rpx;
+    line-height: 70rpx;
+}
+
+.pre_order_info_view{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ordertime_view,.reserve_time_view,.table_type_view,.pre_name_view{
+    width: 100%;
+    height: 65rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.ordertime_title_view,.reserve_time_title_view,.table_type_title_view,.pre_name_title_view{
+    width: 30%;
+    height: 100%;
+    text-align: center;
+}
+
+.ordertime_title,.reserve_time_title,.table_type_title,.pre_name_title{
+    font-size: 32rpx;
+    line-height: 65rpx;
+}
+
+.ordertime_content_view,reserve_time_content_view,.table_type_content_view,.pre_name_content_view{
+    width: 50%;
+    height: 100%;
+}
+
+.ordertime_content,.reserve_time_content,.table_type_content,.pre_name_content{
+    font-size: 32rpx;
+    line-height: 65rpx;
+}
+
+.long_line{
+    background-color: #eeeeee;
+    height: 3rpx;
+    width: 97%;
+    margin-left: 3%;
+}
+
+.pre_status_view{
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.prestatus_view{
+    width: 20%;
+    height: 80%;
+    margin-left: 55%;
+    text-align: center;
+    /* border: 2rpx solid #d5d5d5; */
+    /* border-radius: 5rpx;
+    background-color: #ffffff; */
+    margin-top: 6rpx;
+}
+
+.prestatus_view_left{
+    margin-left: 77%;
+}
+
+.pre_status{
+    font-size: 32rpx;
+    line-height: 64rpx;
+    color: #aaaaaa;
+}
+
+.opearate_view{
+    width: 20%;
+    height: 80%;
+    text-align: center;
+    border: 2rpx solid #d5d5d5;
+    border-radius: 5rpx;
+    background-color: #ffffff;
+    margin-top: 6rpx;
+    margin-left:2%;
+}
+
+.opearate_button{
+    font-size: 32rpx;
+    line-height: 64rpx;
+    color: #333333;
+}

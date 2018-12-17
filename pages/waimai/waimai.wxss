@@ -1,0 +1,407 @@
+/**waimai.wxss**/
+/* @import "/pages/index/head_template/head_template.wxss"; */
+page{  
+  background: #f5f5f5;
+  height:100%;  
+}  
+
+.head_view{
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    height: 230rpx;
+    background-color: #58b7f7;
+}
+
+.bis_view{
+    display: flex;
+    flex-direction: row; 
+    width: 100%;
+    height: 100%;
+}
+
+.img_view{
+    width: 35%;
+    height: 80%;
+    margin-top:1%;
+}
+
+.img{
+    width: 170rpx;
+    height: 170rpx; 
+    border: 0 solid #ff0000;
+    border-radius: 100px;
+    margin-left:17%;
+}
+
+.bis_content_view{
+    display: flex;
+    flex-direction: column; 
+    width: 62%;
+    height: 80%;
+}
+
+.bis_name_view{
+    width: 100%;
+}
+
+.bis_name{
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.scope_view{
+    width: 100%;
+}
+
+.scope{
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.gonggao_view{
+    width: 100%;
+}
+
+.gonggao{
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.act_view{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 65rpx;
+}
+
+.activity_view{
+    width: 70%;
+    height: 55rpx;
+}
+
+swiper {
+    display:block;
+    height:100%;
+}
+
+.ss_swiper{
+    margin-left: 10%;
+}
+
+.ss_text{
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.act_count_view{
+    width: 30%;
+    height: 55rpx;
+    text-align: right;
+}
+
+.act_count{
+    font-size: 24rpx;
+    color: #fff;
+    margin-right: 6%;
+}
+
+.diancan_container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;  
+  height: 100%;
+}
+
+.container {  
+    display: flex;
+    flex-direction: row; 
+    width: 100%;   
+    height: 100%;   
+    background-color: #fff;  
+    color: #939393;  
+    border-top:1px solid #dedede; 
+
+}  
+
+.head_view{
+  height: 285rpx;
+} 
+
+.nav_left{   
+  display: inline-block;  
+  width: 25%;  
+  height: 100%;   
+  background: #f5f5f5;  
+  text-align: center;  
+}  
+ 
+.nav_left .nav_left_items{    
+  height: 30px;    
+  line-height: 30px;   
+  padding: 6px 0;   
+  border-bottom: 1px solid #dedede;
+  font-size: 14px;  
+}  
+ 
+.nav_left .nav_left_items.active{
+  background: #fff;  
+}  
+  
+.nav_right{  
+  display: flex;
+  flex-direction: column; 
+  flex: 1;  
+  width: 75%;  
+  height: 100%;
+  box-sizing: border-box;  
+  background: #fff;  
+}  
+  
+.nav_right .nav_right_items{  
+  float: left;  
+  width: 100%;  
+  height: 100%;  
+  text-align: center;  
+}  
+
+.nav_right .nav_right_items image{
+  width: 50px;  
+  height: 30px;  
+}  
+
+.nav_right .nav_right_items text{ 
+  display: block;  
+  margin-top: 5px;  
+  font-size: 10px; 
+  overflow: hidden;  
+  white-space: nowrap;  
+  text-overflow: ellipsis;  
+}  
+
+.line{
+    margin-top: 10rpx;
+    background-color: #fafafa;
+    height: 4rpx;
+    width: 100%;
+}
+
+.products{
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+    margin-left: 2%;
+}
+
+.category_view{
+    width: 100%;
+    height: 60rpx;
+    background-color: #fafafa;
+}
+
+.category{
+    font-size: 30rpx;
+    line-height: 60rpx;
+    color: #373737;
+    margin-left: 2%;
+}
+.one_pro{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top:2%;
+}
+
+.pro_image_view{
+    width: 170rpx;
+    height: 170rpx;
+}
+
+.pro_image{
+    width: 100%;
+    height: 100%;
+}
+
+.nameAndPrice{
+    width: 65%;
+    margin-left:3%;
+}
+
+.pro_name_view{
+    width: 96%;
+    word-break: break-all;
+}
+
+.pro_name{
+    font-size: 30rpx;
+    color: #939393;
+    word-break: break-all;
+    text-overflow: ellipsis; 
+    display: -webkit-box;  
+    -webkit-line-clamp: 3;  
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.sold_view{
+    width: 96%;
+    margin-top:4%;
+}
+
+.sold{
+    font-size: 26rpx;
+    color: #AFAFAF;
+}
+
+.pricesAndPlus{
+    display: flex;
+    flex-direction: row;
+    margin-top: 4%;
+}
+
+.price_view{
+    width: 50%;
+}
+
+.cur_price{
+    font-size: 34rpx;
+    color: #ED702D;
+}
+
+.buttons_view{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    height: 55rpx;
+}
+
+.sub_view{
+    width: 40%;
+    height: 55rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub{
+  width: 60%;
+}
+
+.count_view{
+  width: 20%;
+  height: 55rpx;
+  text-align:center;
+}
+
+.count{
+    font-size: 28rpx;
+    color: #000;
+    line-height: 55rpx;
+}
+
+.plus_view{
+    width: 40%;
+    text-align: right;
+    height: 55rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 60%; */
+}
+
+.only_plus_view{
+  margin-left: 60%;
+}
+
+.plus{
+    width: 65%;
+    margin-right: 5%;
+}
+
+.active{   
+  background: #fff;  
+}
+
+.loading{  
+  padding: 10rpx;  
+  text-align: center;  
+}  
+
+.loading:before{  
+  display: inline-block;  
+  margin-right: 5rpx;  
+  vertical-align: middle;  
+  content: '';  
+  width: 40rpx;  
+  height: 40rpx;  
+  background: url(../../images/icon-loading.png) no-repeat;  
+  background-size: contain;  
+  animation: rotate 1s linear infinite;  
+}  
+
+.loading.complete:before{  
+  display: none;  
+}  
+
+.bottoms{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100rpx;
+    bottom: 0;
+}
+
+.cart_view,.total_price_view,.jiesuan_view{
+    position: fixed;
+    bottom: 0;
+    height: 100rpx;
+}
+
+.cart_view,.jiesuan_view{
+    text-align: center;
+}
+
+.cart_view{
+  width: 20%;
+  background-color: #eeeeee;
+  border-top: 1px solid #cccccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.total_price_view,.jiesuan_view{
+    font-size: 16px;
+    line-height: 100rpx;
+}
+
+.total_price_view{
+    width: 50%;
+    background-color: #eeeeee;
+    border-top: 1px solid #cccccc;
+    margin-left: 20%;
+}
+
+.cart_img{
+    width: 50%;
+}
+
+.total_price{
+    color: #fe4a65;
+    font-size:30rpx;
+    margin-left: 5%;
+}
+.jiesuan_view{
+    width: 30%;
+    margin-left: 70%;
+    background-color: #F2A93B;
+    border-top: 1px solid #cccccc;
+}
+
+.jiesuan{
+    color: #fff;
+}
+
+.disabled{
+  color: #CECECE;
+}

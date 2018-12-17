@@ -1,0 +1,39 @@
+<!--order_template.wxml-->
+<template name="index_head">
+    <view class="head_view">
+        <view class="bis_view">
+            <view class="img_view">
+                <image src="http://cy.dxshuju.com:8000/{{img_res.logo_image}}" class="img"></image>
+            </view>
+            <view class="bis_content_view">
+                <view class="bis_name_view">
+                    <text class="bis_name">{{bis_res.bis_name}}</text>
+                </view>
+                <view class="scope_view">
+                    <text class="scope">配送范围：{{bis_res.scope}}公里 | ￥{{bis_res.min_price}}元起送</text>
+                </view>
+                <view class="gonggao_view">
+                    <text class="gonggao">公告：本店小程序上线，欢迎体验！</text>
+                </view>
+            </view>
+        </view>
+        <view class="act_view">
+            <view class="activity_view">
+                <swiper class="s_swiper" autoplay="true" interval="3000" circular="true" vertical="true">
+                    <swiper-item class="ss_swiper">
+                        <text class="ss_text">1</text>
+                    </swiper-item>
+                    <swiper-item class="ss_swiper">
+                        <text class="ss_text">12</text>
+                    </swiper-item>
+                    <swiper-item class="ss_swiper">
+                        <text class="ss_text">123</text>
+                    </swiper-item>
+              </swiper>
+            </view>
+            <view class="act_count_view">
+                <text class="act_count">2个活动</text>
+            </view>
+        </view>
+    </view>
+</template>

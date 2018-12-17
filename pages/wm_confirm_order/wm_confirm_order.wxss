@@ -1,0 +1,376 @@
+.c_order_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.thin_line{
+    margin-top: 10rpx;
+    background-color: #eeeeee;
+    height: 3rpx;
+    width: 97%;
+    margin-left: 3%;
+}
+
+.no_top_thin_line{
+    background-color: #eeeeee;
+    height: 3rpx;
+    width: 100%;
+}
+
+.strong_line{
+    background-color: #eeeeee;
+    height: 16rpx;
+    width: 100%;
+}
+
+.pro_thin_line{
+    margin-top: 2%;
+    background-color: #eeeeee;
+    height: 3rpx;
+    width: 97%;
+    margin-left: 3%;
+}
+
+.address_view{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 120rpx;
+}
+
+.nameAndMobile_view{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nameAndMobile{
+    display: flex;
+    flex-direction: row;
+    width:98%;
+    margin-top:1%;
+}
+
+.name_view{
+   width: 85%;
+}
+
+.name,.mobile{
+    font-size: 34rpx;
+    color: #000;
+}
+
+.mobile{
+    margin-left: 10%;
+}
+
+.mobile_view{
+    width: 35%; 
+    margin-left: 4%
+}
+
+.address_view1{
+    width: 98%;
+    height:80rpx;
+}
+
+.address{
+    font-size: 28rpx;
+    color: #a4a4a4;
+}
+
+.notice_view{
+  width: 70%;
+  height: 100%;
+  text-align: left;
+}
+
+.notice{
+  font-size: 34rpx;
+  color: #cccccc;
+  line-height: 120rpx;
+}
+
+.address_icon_view,.jiantou_view{
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.address_icon_view{
+    width:15%;
+}
+
+.jiantou_view{
+    width:10%;
+    margin-left: 5%;
+}
+
+.address_icon{
+    width:30%;
+}
+
+.jiantou{
+    width:50%;
+}
+
+.order_time_view{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 120rpx;
+}
+
+.order_time_title_view{
+    width: 23%;
+    height: 100%;
+}
+
+.order_time_title{
+    font-size: 32rpx;
+    line-height: 120rpx;
+}
+
+.order_time_content_view{
+    width: 55%;
+    height: 100%;
+}
+
+.order_time_content{
+    font-size: 32rpx;
+    color: #458FE7;
+    line-height: 120rpx;
+}
+
+.bis_name_view{
+  width: 100%;
+  height: 80rpx;
+}
+
+.bis_name{
+    font-size: 32rpx;
+    line-height: 80rpx;
+    color: #888888;
+    margin-left: 5%;
+}
+
+.pro_info{
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+    margin-top: 3%;
+}
+
+.img_view{
+    width: 21%;
+    height: 140rpx;
+    margin-left: 2%;
+}
+
+.img{
+    width: 95%;
+    height: 100%;
+}
+
+.nameAndPrice{
+    display: flex;
+    flex-direction: column;
+    width: 72%; 
+    margin-left: 3%;
+}
+
+.pro_name_view{
+    width: 100%;
+    word-break: break-all;
+}
+
+.pro_name{
+    font-size: 32rpx;
+    color: #000; 
+}
+
+.guige_view{
+    width: 100%;
+}
+
+.guige{
+    font-size: 26rpx;
+    color: #b3b3b3; 
+}
+
+.price_view{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top:4%;
+}
+
+.unit_price_view{
+    width: 30%;
+}
+
+.price{
+    font-size: 32rpx;
+    color: #b1364a;  
+}
+
+.count_view{
+     width: 10%;
+     margin-left: 62%;
+     text-align: center;
+}
+
+.count{
+    font-size: 26rpx;
+    color: #b1364a;  
+}
+
+.lunch_box_view,.distribution_fee_view{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.lunch_box_title_view,.distribution_fee_title_view{
+  width: 20%;
+  height: 100%;
+  margin-left: 3%;
+}
+
+.lunch_box_title,.distribution_fee_title{
+  font-size: 32rpx;
+  line-height: 80rpx;
+  color: #000;
+}
+
+.lunch_box_content_view,.distribution_fee_content_view{
+  width: 20%;
+  height: 100%;
+  margin-left: 54%;
+  text-align: right;
+}
+
+.lunch_box_content,.distribution_fee_content{
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #323232;
+}
+
+.activity_view{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.activity_image_view{
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.activity_image{
+  width: 50%;
+}
+
+.activity_title_view{
+  width: 35%;
+  height: 100%;
+  margin-left: 2%;
+}
+
+.activity_title{
+  font-size: 28rpx;
+  line-height: 80rpx;
+  color: #000;
+}
+
+.activity_content_view{
+  width: 20%;
+  height: 100%;
+  margin-left: 30%;
+  text-align: right;
+}
+
+.activity_content{
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #E63223;
+}
+
+.remark_view{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70rpx;
+    margin-top: 1%;
+}
+
+.remark_label{
+    font-size: 28rpx;
+    color: #000;
+    margin-left: 4%;
+    line-height: 70rpx;
+}
+
+.remark_input{
+    font-size: 28rpx;
+    color: #000;  
+    line-height: 70rpx;
+    margin-top: 1.3%;
+}
+
+.total_amount_view{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80rpx;
+}
+
+.paid_view{
+    width:30%;
+    height:100%;
+    text-align:right;
+    margin-left:67%;
+}
+
+.paid_title{
+    font-size: 28rpx;
+    line-height: 80rpx;
+    color: #000;
+}
+
+.paid{
+    font-size: 28rpx;
+    color: #666666;
+    line-height: 80rpx;
+}
+
+button{
+    background-color:#51A938;
+}
+
+.buttons{
+    height: 80rpx;
+    margin-top: 10%;
+}
+
+.c_order_button_view{
+    bottom: 0;
+    height: 80rpx;
+    text-align: center;
+    width:90%;
+    margin-left: 5%;
+}
+
+.c_order_button{
+    font-size: 16px;
+    line-height: 80rpx;
+    color: #fff;
+}
