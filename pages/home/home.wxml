@@ -46,7 +46,7 @@
       </view>
     </view>
     <block wx:for="{{tupian_info}}" wx:for-item="item">
-      <view class="single_ad_view">
+      <view class="single_ad_view" bindtap='ads_redirect' data-jumpurl="{{item.jump_url}}">
           <image class="ad_pic" src='{{item.img_url}}'></image>
       </view>
     </block>

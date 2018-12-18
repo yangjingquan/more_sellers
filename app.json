@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/business/business",
     "pages/home/home",
     "pages/first/first",
     "pages/index/index",
@@ -26,7 +27,7 @@
     "pages/group_orders_detail/orders_detail",
     "pages/search/search",
     "pages/search_group/search",
-    "pages/business/business",
+    
     "pages/self_category/self_category",
     "pages/group_self_category/category",
     "pages/index_group/index",
@@ -84,7 +85,7 @@
       },
       {
         "pagePath": "pages/business/business",
-        "text": "商家",
+        "text": "店铺",
         "iconPath": "pics/icons/bis.png",
         "selectedIconPath": "pics/icons/bis_selected.png"
       },

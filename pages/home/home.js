@@ -88,18 +88,7 @@ Page({
       }
     }),
     //广告位图片获取
-    wx.request({
-      url: app.globalData.extraRequestUrl + '/index/getAdsInfo',
-      data: {},
-      header: {
-        'content-type': ''
-      },
-      success: function (res) {
-        that.setData({
-          tupian_info: res.data.result
-        })
-      }
-    })
+    that.getAdsInfo()
     // 推荐推荐商家列表
     that.getRecommendMallList()
     //获取推荐餐饮店铺列表
@@ -163,6 +152,29 @@ Page({
           cat_mall_info: res.data.result
         })
       }
+    })
+  },
+  //广告位信息获取
+  getAdsInfo : function(){
+    var that = this
+    wx.request({
+      url: app.globalData.extraRequestUrl + '/index/getAdsInfo',
+      data: {},
+      header: {
+        'content-type': ''
+      },
+      success: function (res) {
+        that.setData({
+          tupian_info: res.data.result
+        })
+      }
+    })
+  },
+  //点击广告位跳转
+  ads_redirect : function(e){
+    var jumpurl = e.currentTarget.dataset.jumpurl
+    wx.navigateTo({
+      url: jumpurl,
     })
   },
   //获取详情
@@ -393,6 +405,7 @@ Page({
           },
           method: 'post',
           success: function (res) {
+            console.log(res.data.result)
             that.setData({
               bis_info: res.data.result
             });
