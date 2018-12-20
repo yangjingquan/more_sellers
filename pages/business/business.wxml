@@ -1,38 +1,71 @@
 <!--business.wxml--> 
 <view class="bis_container">  
     <view class="category_view">
-        <view class="mall_list_view">
+        <view class="mall_list_view" bindtap='changeMallType' data-type="1">
             <text class="mall_list_text">商家列表</text>
         </view>
-        <view class="catering_list_view">
+        <view class="catering_list_view" bindtap='changeMallType' data-type="2">
             <text class="catering_list_text">餐饮列表</text>
         </view>
     </view>
-    <block wx:for="{{bis_info}}">
-        <view class="bis_view">
-            <view class="bis_title_view" bindtap="bisTap" data-bisid="{{item.bis_id}}">
-                <view class="bis_img_view">
-                    <image class="bis_img" src="/pics/index_swiper/bis.jpg"></image>
+    <view class="bis_view">
+        <view wx:if="{{mall_type == 1}}" class="single_bis_view">
+            <view class="bis_img_view">
+                <image class="bis_img" src="/pics/index_swiper/baby1.jpg" mode="widthFix"> </image>
+            </view>
+            <view class="bis_content_view">
+                <view class="bis_title_view">
+                    <text class="bis_title">王记黄焖鸡米饭</text>
                 </view>
-                <view class="bis_name_view">
-                    <text class="bis_name">{{item.bis_name}}</text>
-                    <view class="group_img_view" wx:if="{{item.is_pintuan == 1}}">
-                        <image class="group_img" src="/pics/icons/group_icon.png" mode="widthFix"></image>
-                    </view>
+                <view class="distance_view">
+                    <text class="distance">500m</text>
                 </view>
-                
-                <view class="go_bis_view">
-                    <text class="go_bis">进入店铺 ></text>
+                <view class="brand_view">
+                    <text class="brand">大型超市</text>
+                </view>
+                <view class="address_view">
+                    <text class="address">软件园路8号6号门</text>
                 </view>
             </view>
-            <view class="pro_view">
-                <block wx:for="{{item.pro_info}}" wx:for-item="itemPro">
-                    <view class="single_img_view" bindtap="proTap" data-proid="{{itemPro.pro_id}}">
-                        <image class="single_img" src="{{itemPro.thumb}}"></image>
-                    </view>
-                </block>
-            </view>    
         </view>
-        <view class="thin_line"></view>
-    </block>
+        <view wx:if="{{mall_type == 1}}" class="thin_line"></view>
+        
+        <view wx:if="{{mall_type == 2}}" class="single_cat_view">
+            <view class="cat_img_view">
+                <image class="cat_img" src="/pics/index_swiper/baby1.jpg" mode="widthFix"> </image>
+            </view>
+            <view class="cat_content_view">
+                <view class="cat_title_view">
+                    <text class="cat_title">王记黄焖鸡米饭</text>
+                </view>
+                <view class="cat_distance_view">
+                    <text class="cat_distance">500m</text>
+                </view>
+                <view class="cat_info_view">
+                    <text class="qisong_test">起送 ￥20 配送 ￥4</text>
+                </view>
+                <view class="cat_category_view">
+                    <text class="category_test">黄焖鸡</text>
+                </view>
+                <view class="coupon_view">
+                    <view class="single_coupon_view">
+                        <text class="coupon_text">满10减3</text>
+                    </view>
+                    <view class="single_coupon_view">
+                        <text class="coupon_text">满25减10</text>
+                    </view>
+                    <view class="single_coupon_view">
+                        <text class="coupon_text">满40减18</text>
+                    </view>
+                    <view class="single_coupon_view">
+                        <text class="coupon_text">70减30</text>
+                    </view>
+                    <view class="single_coupon_view">
+                        <text class="coupon_text">满100减45</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{mall_type == 2}}" class="thin_line"></view>
+    </view>  
 </view>

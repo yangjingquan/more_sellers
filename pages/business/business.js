@@ -3,7 +3,7 @@
 var app = getApp()
 Page({
     data: {
-      is_mall : 1
+      mall_type : 1//1-商城店铺 2-餐饮店铺
     },
     onShow: function (options) {
       var that = this
@@ -32,6 +32,14 @@ Page({
           });
         }
       })
+    },
+    //切换店铺
+    changeMallType : function(e){
+      var that = this
+      var type = e.currentTarget.dataset.type
+      that.setData({
+        mall_type: type
+      });
     },
     //上拉加载更多
     onReachBottom : function(){
@@ -141,44 +149,7 @@ Page({
         }
       })
     },
-    //获取详情
-    proTap: function (event) {
-      var pro_id = event.currentTarget.dataset.proid
-      //获取该商品bis_id
-      wx.request({
-        url: app.globalData.requestUrl + '/bis/getBisIDByProId',
-        data: { pro_id: pro_id },
-        header: {
-          'content-type': ''
-        },
-        method: 'post',
-        success: function (res) {
-          var bis_id = res.data.bis_id
-          app.globalData.bis_id = bis_id
-          //判断店铺类型并跳转页面
-          wx.request({
-            url: app.globalData.requestUrl + '/bis/getBisTypeByBisId',
-            data: { bis_id: bis_id },
-            header: {
-              'content-type': ''
-            },
-            method: 'post',
-            success: function (res) {
-              var is_pintuan = res.data.is_pintuan
-              if (is_pintuan == 1) {
-                wx.navigateTo({
-                  url: '/pages/index_group/pro_detail/pro_detail?pro_id=' + pro_id,
-                })
-              } else {
-                wx.navigateTo({
-                  url: '/pages/index/pro_detail/pro_detail?pro_id=' + pro_id,
-                })
-              }
-            }
-          })
-        }
-      })
-    },
+    
     //获取分类信息
     getCatInfo : function(){
       var that = this
