@@ -8,28 +8,38 @@ Page({
     onShow: function (options) {
       var that = this
       //获取店铺列表
-      that.getBisList(0)
-      //获取分类信息
-      that.getCatInfo()
+      that.getBisList()
     },
     //获取店铺列表
-    getBisList: function (cat_id){
+    getBisList: function (){
       var that = this
-      wx.request({
-        url: app.globalData.requestUrl + '/bis/getBisList',
-        data: { cat_id: cat_id},
-        header: {
-          'content-type': ''
-        },
-        method: 'post',
-        success: function (res) {
-          that.setData({
-            bis_info: res.data.result,
-            hasMore: res.data.has_more,
-            page : 1,
-            navBar: cat_id,
-            cat_id:cat_id
-          });
+      wx.getLocation({
+        type: 'gcj02',
+        success(res) {
+          var latitude = res.latitude.toFixed(6)
+          var longitude = res.longitude.toFixed(6)
+          var location = longitude + ',' + latitude
+          console.log(location)
+          var postdata = {
+            location: location
+          }
+          wx.request({
+            url: app.globalData.extraRequestUrl + '/index/getBisList',
+            data: postdata,
+            header: {
+              'content-type': ''
+            },
+            method: 'post',
+            success: function (res) {
+              console.log(res.data)
+              that.setData({
+                bis_info: res.data.result,
+                hasMore: res.data.has_more,
+                page: 1,
+                mall_type : 1
+              });
+            }
+          })
         }
       })
     },
@@ -41,9 +51,14 @@ Page({
         mall_type: type
       });
     },
+    // 获取餐饮店铺列表
+    getCatMallList : function(){
+
+    },
     //上拉加载更多
     onReachBottom : function(){
       var that = this
+      mall_type = that.data.mall_type
       that.setData({
         hidden: false
       });
@@ -51,7 +66,6 @@ Page({
       page++
       var url = app.globalData.requestUrl + '/bis/getBisList'
       var postData = {
-        cat_id: that.data.cat_id,
         page: page
       }
       if (that.data.hasMore == true) {
@@ -97,14 +111,11 @@ Page({
     onPullDownRefresh : function(){
       var that = this
       wx.showNavigationBarLoading()
-      var postData = {
-        cat_id: that.data.cat_id
-      }
 
       //执行查询
       wx.request({
-        url: app.globalData.requestUrl + '/bis/getBisList',
-        data: postData,
+        url: app.globalData.extraRequestUrl + '/index/getBisList',
+        data: {},
         header: {
           'content-type': ''
         },
@@ -148,29 +159,5 @@ Page({
           }
         }
       })
-    },
-    
-    //获取分类信息
-    getCatInfo : function(){
-      var that = this
-      wx.request({
-        url: app.globalData.requestUrl + '/bis/getFirstCatInfo',
-        data: {},
-        header: {
-          'content-type': ''
-        },
-        method: 'post',
-        success: function (res) {
-          that.setData({
-            cat_info: res.data.result
-          })
-        }
-      })
-    },
-    //通过分类获取商家列表
-    getBisListByCat : function(e){
-      var that = this
-      var cat_id = e.currentTarget.dataset.catid
-      that.getBisList(cat_id)
     }
 })    

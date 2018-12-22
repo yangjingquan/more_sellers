@@ -9,28 +9,32 @@
         </view>
     </view>
     <view class="bis_view">
-        <view wx:if="{{mall_type == 1}}" class="single_bis_view">
-            <view class="bis_img_view">
-                <image class="bis_img" src="/pics/index_swiper/baby1.jpg" mode="widthFix"> </image>
-            </view>
-            <view class="bis_content_view">
-                <view class="bis_title_view">
-                    <text class="bis_title">王记黄焖鸡米饭</text>
-                </view>
-                <view class="distance_view">
-                    <text class="distance">500m</text>
-                </view>
-                <view class="brand_view">
-                    <text class="brand">大型超市</text>
-                </view>
-                <view class="address_view">
-                    <text class="address">软件园路8号6号门</text>
-                </view>
-            </view>
-        </view>
-        <view wx:if="{{mall_type == 1}}" class="thin_line"></view>
-        
-        <view wx:if="{{mall_type == 2}}" class="single_cat_view">
+      <view wx:if="{{mall_type == 1}}">
+        <block wx:for="{{bis_info}}">
+          <view class="single_bis_view">
+              <view class="bis_img_view">
+                  <image class="bis_img" src="{{item.thumb}}" mode="widthFix"> </image>
+              </view>
+              <view class="bis_content_view">
+                  <view class="bis_title_view">
+                      <text class="bis_title">{{item.bis_name}}</text>
+                  </view>
+                  <view class="distance_view">
+                      <text class="distance">{{item.distance}}</text>
+                  </view>
+                  <view class="brand_view">
+                      <text class="brand">{{item.brand}}</text>
+                  </view>
+                  <view class="address_view">
+                      <text class="address">{{item.address}}</text>
+                  </view>
+              </view>
+          </view>
+          <view wx:if="{{mall_type == 1}}" class="thin_line"></view>
+        </block>
+     </view>
+     <view wx:if="{{mall_type == 2}}"> 
+        <view  class="single_cat_view">
             <view class="cat_img_view">
                 <image class="cat_img" src="/pics/index_swiper/baby1.jpg" mode="widthFix"> </image>
             </view>
@@ -67,5 +71,6 @@
             </view>
         </view>
         <view wx:if="{{mall_type == 2}}" class="thin_line"></view>
+      </view>   
     </view>  
 </view>
