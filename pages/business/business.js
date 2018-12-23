@@ -10,7 +10,7 @@ Page({
       //获取店铺列表
       that.getBisList()
     },
-    //获取店铺列表
+    //获取商城店铺列表
     getBisList: function (){
       var that = this
       wx.getLocation({
@@ -43,17 +43,50 @@ Page({
         }
       })
     },
+  //获取餐饮店铺列表
+  getCatBisList: function () {
+    var that = this
+    wx.getLocation({
+      type: 'gcj02',
+      success(res) {
+        var latitude = res.latitude.toFixed(6)
+        var longitude = res.longitude.toFixed(6)
+        var location = longitude + ',' + latitude
+        var postdata = {
+          location: location
+        }
+        wx.request({
+          url: app.globalData.extraRequestUrl + '/index/getCatBisList',
+          data: postdata,
+          header: {
+            'content-type': ''
+          },
+          method: 'post',
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              cat_bis_info: res.data.result,
+              hasMore: res.data.has_more,
+              page: 1,
+              mall_type: 2
+            });
+          }
+        })
+      }
+    })
+  },
     //切换店铺
     changeMallType : function(e){
       var that = this
       var type = e.currentTarget.dataset.type
+      if(type == 1){
+        that.getBisList()
+      }else{
+        that.getCatBisList()
+      }
       that.setData({
         mall_type: type
       });
-    },
-    // 获取餐饮店铺列表
-    getCatMallList : function(){
-
     },
     //上拉加载更多
     onReachBottom : function(){
