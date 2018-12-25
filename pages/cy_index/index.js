@@ -3,15 +3,19 @@
 var app = getApp()
 Page({
   data: {
-    imgUrl: app.globalData.imgUrl
   },
   onLoad: function (options) { 
-    var that = this   
-    var bis_id = app.globalData.bis_id
+    var that = this
+    if (!options.bis_id) {
+      var bis_id = app.globalData.bis_id
+    } else {
+      var bis_id = options.bis_id
+      app.globalData.bis_id = options.bis_id
+    }
     
     //首页信息
     wx.request({
-      url: app.globalData.requestUrl + '/index/getBisInfo',
+      url: app.globalData.cateringRequestUrl + '/index/getBisInfo',
       data: {bis_id : bis_id},
       header: {
         'content-type': ''
@@ -33,7 +37,7 @@ Page({
   getProDetail: function(event){
     var pro_id = event.currentTarget.dataset.proid;
     wx.navigateTo({
-      url: '/pages/index/pro_detail/pro_detail?pro_id='+pro_id,
+      url: '/pages/cy_index/pro_detail/pro_detail?pro_id='+pro_id,
     })
   },
   //下拉刷新
@@ -42,7 +46,7 @@ Page({
     var bis_id = app.globalData.bis_id
     wx.showNavigationBarLoading()
     wx.request({
-      url: app.globalData.requestUrl + '/index/getBisInfo',
+      url: app.globalData.cateringRequestUrl + '/index/getBisInfo',
       data: { bis_id: bis_id },
       header: {
         'content-type': ''
@@ -62,7 +66,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: '轻商小程序系统，更快！更流畅！',
-      path: '/pages/index/index'
+      path: '/pages/cy_index/index'
     }
   },
   //跳转预定页面

@@ -9,15 +9,15 @@ Page({
 
   onLoad: function (options) {
       var that = this
-      var bis_id = app.globalData.bis_id
-      var status = 1
+      var bis_id = 9
+      var order_type = options.order_type
       var postdata = {
         openid: app.globalData.openid,
-        type: status,
+        type: order_type,
         bis_id: bis_id
       }
       that.setData({
-        status: status
+        status: order_type
       })
       that.getOrderInfo(postdata) 
 
@@ -26,7 +26,7 @@ Page({
   //切换订单类型
   checkOrderType : function(event){
     var that = this
-    var bis_id = app.globalData.bis_id
+    var bis_id = 9
     var status = event.currentTarget.dataset.statusid
     var postdata = {
       openid: app.globalData.openid,
@@ -40,9 +40,9 @@ Page({
   getOrderInfo : function(postdata){
       var that = this
       if(postdata.type != 3){
-        var url = app.globalData.requestUrl + '/order/getNormalOrderInfo'
+        var url = app.globalData.cateringRequestUrl + '/order/getNormalOrderInfo'
       }else{
-        var url = app.globalData.requestUrl + '/order/getReserveOrderInfo'
+        var url = app.globalData.cateringRequestUrl + '/order/getReserveOrderInfo'
       }
       
       wx.request({
@@ -83,7 +83,7 @@ Page({
       openid: app.globalData.openid
     }
     wx.request({
-      url: app.globalData.requestUrl + '/pay/pay',
+      url: app.globalData.cateringRequestUrl + '/pay/pay',
       data: pdata,
       method: 'post',
       header: {
@@ -120,9 +120,9 @@ Page({
     }
     wx.showNavigationBarLoading()
     if (postdata.type != 3) {
-      var url = app.globalData.requestUrl + '/order/getNormalOrderInfo'
+      var url = app.globalData.cateringRequestUrl + '/order/getNormalOrderInfo'
     } else {
-      var url = app.globalData.requestUrl + '/order/getReserveOrderInfo'
+      var url = app.globalData.cateringRequestUrl + '/order/getReserveOrderInfo'
     }
 
     //获取订单信息
@@ -157,7 +157,7 @@ Page({
     var that = this
     var order_id = e.currentTarget.dataset.orderid
     wx.request({
-      url: app.globalData.requestUrl + '/order/cancelOrder',
+      url: app.globalData.cateringRequestUrl + '/order/cancelOrder',
       data: { order_id: order_id},
       method: 'post',
       header: {

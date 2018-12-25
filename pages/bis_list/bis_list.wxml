@@ -1,0 +1,60 @@
+<!--pages/bis_list/bis_list.wxml-->
+<view class="bis_container">  
+    <view class="bis_view">
+      <view wx:if="{{mall_type == 1}}">
+        <block wx:for="{{bis_info}}">
+          <view class="single_bis_view" bindtap="bisTap" data-bisid="{{item.bis_id}}" data-type="1">
+              <view class="bis_img_view">
+                  <image class="bis_img" src="{{item.thumb}}" mode="widthFix"> </image>
+              </view>
+              <view class="bis_content_view">
+                  <view class="bis_title_view">
+                      <text class="bis_title">{{item.bis_name}}</text>
+                  </view>
+                  <view class="distance_view">
+                      <text class="distance">{{item.distance}}</text>
+                  </view>
+                  <view class="brand_view">
+                      <text class="brand">{{item.brand}}</text>
+                  </view>
+                  <view class="address_view">
+                      <text class="address">{{item.address}}</text>
+                  </view>
+              </view>
+          </view>
+          <view wx:if="{{mall_type == 1}}" class="thin_line"></view>
+        </block>
+     </view>
+     <view wx:if="{{mall_type == 2}}" bindtap="bisTap" data-bisid="{{item.bis_id}}" data-type="2"> 
+      <block wx:for="{{cat_bis_info}}">
+        <view  class="single_cat_view">
+          <view class="cat_img_view">
+              <image class="cat_img" src="{{item.logo_image}}" mode="widthFix"> </image>
+          </view>
+          <view class="cat_content_view">
+              <view class="cat_title_view">
+                  <text class="cat_title">{{item.bis_name}}</text>
+              </view>
+              <view class="cat_distance_view">
+                  <text class="cat_distance">{{item.distance}}</text>
+              </view>
+              <view class="cat_info_view">
+                  <text class="qisong_test">起送 ￥{{item.min_price}} 配送 ￥{{item.distribution_fee}}</text>
+              </view>
+              <view class="cat_category_view">
+                  <text class="category_test">{{item.brand}}</text>
+              </view>
+              <view class="coupon_view">
+                <block wx:for="{{item.activity_list}}" wx:for-item="actItem">
+                  <view class="single_coupon_view">
+                      <text class="coupon_text">{{actItem.activity_name}}</text>
+                  </view>
+                </block>
+              </view>
+          </view>
+        </view>
+        <view wx:if="{{mall_type == 2}}" class="thin_line"></view>
+      </block>
+    </view>   
+    </view>  
+</view>

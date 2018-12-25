@@ -9,7 +9,7 @@
   </swiper>
   <view class="section section_gap">
     <view class="scroll-view_H">
-      <view class="scroll-view-item_H" wx:for="{{hotList}}" wx:key="{{item}}" data-catid="{{item.cat_id}}" bindtap="yuyue">
+      <view class="scroll-view-item_H" wx:for="{{hotList}}" wx:key="{{item}}" data-catid="{{item.cat_id}}" bindtap="redirectTo">
         <image src="{{item.pic}}" class="scroll-image" />
         <view class="title">{{item.title}}</view>
       </view>
@@ -17,7 +17,7 @@
   </view>
   <view class="section section_gap">
     <view class="scroll-view_H">
-      <view class="scroll-view-item_H" wx:for="{{hotList1}}" wx:key="{{item}}" data-catid="{{item.cat_id}}" bindtap="yuyue">
+      <view class="scroll-view-item_H" wx:for="{{hotList1}}" wx:key="{{item}}" data-catid="{{item.cat_id}}" bindtap="redirectTo">
         <image src="{{item.pic}}" class="scroll-image" />
         <view class="title">{{item.title}}</view>
       </view>
@@ -135,7 +135,7 @@
     </view>
     <view class="bis_content_view">
       <block wx:for="{{bis_info}}">
-        <view class="single_bis_view" bindtap="bisTap" data-bisid="{{item.bis_id}}">
+        <view class="single_bis_view" bindtap="bisTap" data-bisid="{{item.bis_id}}" data-type="{{item.type}}">
           <view class="bis_img_view">
             <image class="bis_img" src="{{item.thumb}}" mode="widthFix"></image>
           </view>

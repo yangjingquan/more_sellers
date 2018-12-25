@@ -5,9 +5,9 @@ Page({
     data: {
       mall_type : 1//1-商城店铺 2-餐饮店铺
     },
-    onShow: function (options) {
+    onLoad: function (options) {
       var that = this
-      //获取店铺列表
+      //获取商城店铺列表
       that.getBisList()
     },
     //获取商城店铺列表

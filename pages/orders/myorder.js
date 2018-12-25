@@ -8,11 +8,12 @@ Page({
 
   onLoad: function (options) {
       var that = this
+      var order_status = options.order_status
       var postdata = {
         wx_id : app.globalData.openid
       }
       that.setData({
-        status : that.data.status
+        status: order_status
       }) 
       //获取订单信息
       that.getOrderInfo(postdata)

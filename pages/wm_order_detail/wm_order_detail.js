@@ -15,7 +15,7 @@ Page({
   getOrderInfo: function (order_id){
     var that = this
     wx.request({
-      url: app.globalData.requestUrl + '/order/getWmOrderDetail',
+      url: app.globalData.cateringRequestUrl + '/order/getWmOrderDetail',
       data: { order_id: order_id},
       method : 'post',
       header: {

@@ -4,7 +4,8 @@ var checkLogin = require('../../utils/util.js');
 //获取应用实例
 Page({
   data: {
-    userInfo: {}
+    userInfo: {},
+    order_type : 1//1-普通订单 2-拼团订单 3-餐饮订单
   },
   onShow: function () {
     var that = this
@@ -21,21 +22,33 @@ Page({
     that.getJifen()
     
   },
-  myOrderTap : function(){
+  myOrderTap : function(e){
+    var order_status = e.currentTarget.dataset.orderstatus
     if (!app.globalData.userInfo) {
       app.getUserInfo(true)
     } else {
       wx.navigateTo({
-        url: '../orders/myorder',
+        url: '../orders/myorder?order_status=' + order_status,
       })
     }
   },
-  myGroupOrderTap: function () {
+  myGroupOrderTap: function (e) {
+    var order_status = e.currentTarget.dataset.orderstatus
     if (!app.globalData.userInfo) {
       app.getUserInfo(true)
     } else {
       wx.navigateTo({
-        url: '../group_orders/myorder',
+        url: '../group_orders/myorder?order_status=' + order_status,
+      })
+    }
+  },
+  myCyOrderTap: function (e) {
+    var order_type = e.currentTarget.dataset.ordertype
+    if (!app.globalData.userInfo) {
+      app.getUserInfo(true)
+    } else {
+      wx.navigateTo({
+        url: '../cy_orders/myorder?order_type=' + order_type,
       })
     }
   },
@@ -72,15 +85,6 @@ Page({
     } else {
       wx.navigateTo({
         url: '/pages/rec_orders/order',
-      })
-    }
-  },
-  getMyRecInfo: function () {
-    if (!app.globalData.userInfo) {
-      app.getUserInfo(true)
-    } else {
-      wx.navigateTo({
-        url: '/pages/myteam/myteam',
       })
     }
   },
@@ -156,15 +160,11 @@ Page({
        }
      })
   },
-  //清除缓存
-  clearStorage : function(){
-    app.getUserInfo()
-    if (app.globalData.openid && app.globalData.openid != ''){
-      wx.showToast({
-        title: '清除缓存成功！',
-        icon: 'success',
-        duration: 2000
-      })
-    }
+  switchOrderType : function(e){
+    var that = this
+    var order_type = e.currentTarget.dataset.ordertype
+    that.setData({
+      order_type: order_type
+    })
   }
 })
