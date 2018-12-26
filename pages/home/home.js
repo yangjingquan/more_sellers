@@ -38,7 +38,7 @@ Page({
       {
         pic: "/pics/cat/near_mall.png",
         title: "附近商家",
-        cat_id: "../recommend/recommend"
+        cat_id: "../business/business"
       },
       {
         pic: "/pics/cat/008.png",

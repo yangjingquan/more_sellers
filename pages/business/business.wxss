@@ -32,16 +32,20 @@ page{
   color: #666;
   line-height:60rpx;
 }
-
+.mall_list_view.on {
+  background-color: rgb(235, 221, 18);
+}
 .catering_list_view{
   width: 47%;
   text-align: center;
   height: 60rpx;
   margin-left: 2%;
   border-radius: 10rpx;
+  background-color: #cfd8e2;
+}
+.catering_list_view.on {
   background-color: rgb(235, 221, 18);
 }
-
 .catering_list_text{
   font-size: 30rpx;
   color: #666;

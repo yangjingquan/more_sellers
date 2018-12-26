@@ -1,10 +1,10 @@
 <!--business.wxml--> 
 <view class="bis_container">  
     <view class="category_view">
-        <view class="mall_list_view" bindtap='changeMallType' data-type="1">
+        <view class="mall_list_view {{selected ? 'on' : ''}}" bindtap='changeMallType' data-type="1">
             <text class="mall_list_text">商家列表</text>
         </view>
-        <view class="catering_list_view" bindtap='changeMallType' data-type="2">
+        <view class="catering_list_view {{selected1 ? 'on' : ''}}" bindtap='changeMallType' data-type="2">
             <text class="catering_list_text">餐饮列表</text>
         </view>
     </view>

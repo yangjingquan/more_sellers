@@ -3,7 +3,9 @@
 var app = getApp()
 Page({
     data: {
-      mall_type : 1//1-商城店铺 2-餐饮店铺
+      mall_type : 1, //1-商城店铺 2-餐饮店铺
+      selected: true,
+      selected1: false
     },
     onShow: function (options) {
       var that = this
@@ -36,7 +38,8 @@ Page({
                 bis_info: res.data.result,
                 hasMore: res.data.has_more,
                 page: 1,
-                mall_type : 1
+                mall_type : 1,
+                bs: 0
               });
             }
           })
@@ -81,12 +84,20 @@ Page({
       var type = e.currentTarget.dataset.type
       if(type == 1){
         that.getBisList()
+        that.setData({
+          mall_type: type,
+          selected1: false,
+          selected: true
+        });
       }else{
         that.getCatBisList()
+        that.setData({
+          mall_type: type,
+          selected1: true,
+          selected: false
+        });
       }
-      that.setData({
-        mall_type: type
-      });
+      
     },
     //上拉加载更多
     onReachBottom : function(){
