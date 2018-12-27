@@ -50,11 +50,8 @@
                           <view class="org_price_view">
                               <text class="org_price">￥{{item.original_price}}</text>
                           </view>
-                          
                       </view>
-                      <view class="jifen">
-              <text>可获积分{{item.jifen}}</text>
-              </view>
+                      
                   </view>
               </view>
           </block>

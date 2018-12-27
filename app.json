@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/business/business",
     "pages/home/home",
     "pages/first/first",
     "pages/index/index",
@@ -27,7 +26,7 @@
     "pages/group_orders_detail/orders_detail",
     "pages/search/search",
     "pages/search_group/search",
-    
+    "pages/business/business",
     "pages/self_category/self_category",
     "pages/group_self_category/category",
     "pages/index_group/index",
@@ -50,6 +49,7 @@
     "pages/recommend/recommend",
     "pages/diancan/diancan",
     "pages/cy_index/pro_detail/pro_detail",
+    "pages/cy_index/index",
     "pages/cy_orders/order_template/order_template",
     "pages/dc_confirm_order/dc_confirm_order",
     "pages/wm_confirm_order/wm_confirm_order",
@@ -58,9 +58,9 @@
     "pages/reserve/reserve",
     "pages/waimai/waimai",
     "pages/cash_collect/cash_collect",
-    "pages/cy_orders/myorder"
+    "pages/cy_orders/myorder",
+    "pages/bis_list/bis_list"
   ],
-
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",

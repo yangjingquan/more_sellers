@@ -33,12 +33,16 @@ Page({
       {
         pic: "/pics/cat/near_cat.png",
         title: "附近餐饮",
-        cat_id: "../gonggao/gonggao"
+        cat_id: "../bis_list/bis_list?mall_type=2"
       },
       {
         pic: "/pics/cat/near_mall.png",
         title: "附近商家",
+<<<<<<< HEAD
         cat_id: "../business/business"
+=======
+        cat_id: "../bis_list/bis_list?mall_type=1"
+>>>>>>> c24ce22b0af94756ba4e0d1659ade31cddedfd47
       },
       {
         pic: "/pics/cat/008.png",
@@ -318,39 +322,11 @@ Page({
       }
     })
   },
-  yuyue: function (e) {
+  redirectTo: function (e) {
     var url = e.currentTarget.dataset.catid
-    if (url == "../recommend/recommend"){
-      wx.request({
-        url: app.globalData.requestUrl + '/team/checkUser',
-        data: { openid: app.globalData.openid },
-        header: {
-          'content-type': ''
-        },
-        method: 'post',
-        success: function (res) {
-          var res = res.data.result
-          if (res == 0) {
-            wx.showModal({
-              title: '对不起，您还未拥有团队，请联系客服!',
-              content: '',
-              confirmText: '取消',
-              showCancel: false
-            })
-          } else {
-            wx.navigateTo({
-              url: url
-            });
-          }
-        }
-      })
-    }else{
-      wx.navigateTo({
-        url: url
-      });
-    }
-    
-
+    wx.navigateTo({
+      url: url
+    });
   },
   
   //获取详情
@@ -365,6 +341,7 @@ Page({
   bisTap: function (e) {
     var that = this
     var bis_id = e.currentTarget.dataset.bisid
+    var type = e.currentTarget.dataset.type
     app.globalData.bis_id = bis_id
     //判断店铺类型并跳转页面
     wx.request({
@@ -376,15 +353,22 @@ Page({
       method: 'post',
       success: function (res) {
         var is_pintuan = res.data.is_pintuan
-        if (is_pintuan == 1) {
+        if(type == 1){
+          if (is_pintuan == 1) {
+            wx.navigateTo({
+              url: '/pages/index_group/index?bis_id=' + bis_id,
+            })
+          } else {
+            wx.navigateTo({
+              url: '/pages/index/index?bis_id=' + bis_id,
+            })
+          }
+        }else{
           wx.navigateTo({
-            url: '/pages/index_group/index',
-          })
-        } else {
-          wx.navigateTo({
-            url: '/pages/index/index',
+            url: '/pages/cy_index/index?bis_id=' + bis_id,
           })
         }
+        
       }
     })
   },

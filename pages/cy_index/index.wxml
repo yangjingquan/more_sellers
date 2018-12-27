@@ -4,7 +4,7 @@
     <view class="head_view">
         <view class="bis_view">
             <view class="img_view">
-                <image src="{{imgUrl + img_res.logo_image}}" class="img"></image>
+                <image src="{{img_res.logo_image}}" class="img"></image>
             </view>
             <view class="bis_content_view">
                 <view class="bis_name_view">
@@ -37,7 +37,7 @@
         <swiper class="first_swiper" indicator-dots="true" autoplay="true" interval="3000" circular="true">
             <block wx:for="{{banner_res}}">
                 <swiper-item>
-                    <image src="{{imgUrl + item.image}}" class="first_swiper-item"></image>
+                    <image src="{{ item.image}}" class="first_swiper-item"></image>
                 </swiper-item>
             </block>
           </swiper>
@@ -145,7 +145,7 @@
                         <text class="ps_content_con1">准时必达，专业配送，提供高品质送餐服务</text>
                     </view>
                     <view class="ps_content_con2_view">
-                        <text class="ps_content_con2">配送费￥1</text>
+                        <text class="ps_content_con2">配送费￥{{bis_res.distribution_fee}}</text>
                     </view>
                 </view>
             </view>
@@ -172,9 +172,6 @@
             <view class="wxpay_text_view">
                 <text class="wxpay_text">该商家支持微信支付</text>
             </view>
-        </view>
-        <view class="bottom_logo_view">
-            <image class="bottom_logo" src="/pics/icons/bottom_logo.png" mode="widthFix"></image>
         </view>
     </view>
 </view>

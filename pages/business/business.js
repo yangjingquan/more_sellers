@@ -7,9 +7,9 @@ Page({
       selected: true,
       selected1: false
     },
-    onShow: function (options) {
+    onLoad: function (options) {
       var that = this
-      //获取店铺列表
+      //获取商城店铺列表
       that.getBisList()
     },
     //获取商城店铺列表
